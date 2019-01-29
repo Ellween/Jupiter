@@ -1,0 +1,354 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+.popular_Planet {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+h2{
+    font-family: 'Karla', sans-serif;
+}
+
+html, body {
+position: relative;
+height: 100%;
+}
+body {
+background: #eee;
+font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+font-size: 14px;
+color:#000;
+margin: 0;
+padding: 0;
+}
+
+
+/* Header Css */
+
+.navbar {
+    background-image:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1.33) ), url("/images/nebula.jpg");
+    background-size:cover;
+    background-position: center; 
+}
+
+.navbar-brand {
+    width: 38px;
+    color: white !important; 
+    font-family: Roboto ; 
+    font-weight: bold;
+}
+
+.fa-search {
+    font-size: 20px; 
+    color: white; 
+    position: absolute; 
+    right: 15px; 
+    cursor: pointer
+}
+
+.bord {
+    list-style: none; 
+    color: white; 
+    font-family: Roboto; 
+    font-size: 17px; 
+    cursor: pointer;
+}
+
+/* End Header */
+
+/* SignUp And Login */
+
+.singup {
+    width: 400px; 
+    height: 600px; 
+    border-radius: 10px; 
+    background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1.33) ), url("/images/sign_log1.jpg"); 
+    background-size: cover; 
+    position: fixed; 
+    z-index: 1000;  
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+
+/* End SignUp and Login */
+
+/* Content CSs */
+
+.content {
+    background-image:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1.33) ), url("/images/nebula.jpg"); 
+    background-size:cover; 
+    background-position: center; 
+    background-attachment: fixed
+}
+
+
+.planet_image {
+   
+}
+
+.content-2 {
+    background-image:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1.33) ), url("/images/nebula2.jpg"); 
+    background-size:cover; 
+    background-position: center;
+    background-attachment: fixed
+}
+
+.dot {
+    position: absolute; 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+    background :white; 
+    top: -15px;
+}
+
+.satelite_dot img {
+    width: auto; 
+    height: 150px; 
+    transform: rotate(190deg);
+}
+
+
+.swiper-container {
+width: 100%;
+height: 100%;
+}
+.swiper-slide {
+text-align: center;
+font-size: 18px;
+background: #fff;
+/* Center slide text vertically */
+display: -webkit-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+-webkit-justify-content: center;
+justify-content: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+-webkit-align-items: center;
+align-items: center;
+}
+
+.swiper-pagination span {
+border-radius: 0%;
+width: 25px;
+height: 3px;
+
+}
+
+.swiper-pagination {
+bottom: 0 !important;
+}
+
+.swiper-pagination-bullet-active
+{
+background: #eee;
+}
+
+
+
+
+
+
+
+.other_planets {
+color: #fff;
+font-family: 'Karla', sans-serif;
+font-size: 16px;
+}
+
+
+.other_planets_img {
+animation: mymove 10s  infinite linear;
+}
+    @keyframes mymove {
+from {transform: rotate(0deg);}
+to {transform: rotate(360deg);}
+}
+
+
+
+.dot {
+    border: 3px solid #999;
+-webkit-border-radius: 30px;
+
+position: absolute;
+right: -30px;
+
+-webkit-animation: pulsate 1s ease-out;
+-webkit-animation-iteration-count: infinite; 
+opacity: 0.0
+}
+
+@keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+50% {opacity: 1.0;}
+100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+
+.popular_Planet {
+    display: flex;
+}
+
+.planets {
+    display: flex;
+}
+
+
+.navbar-collapse {
+    display: flex;
+}
+
+.navbar-collapse  li {
+    margin-right: 20px;
+}
+.search_bar {
+    position: relative;
+    width: 160px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.search  {
+   
+   position: absolute;
+   right: 45px;
+    border: none;
+   width: 0%;
+   margin: 0;
+    border-radius: 4px;
+    padding: 5px 0px;
+   transition: all .5s cubic-bezier(0.89, 0.31, 0.52, 1.41);
+ 
+}
+
+.search::placeholder {
+
+    font-family: 'Karla';
+    font-size: 13px;
+    color: black;
+
+}
+
+.search.active {
+   width: 100%;
+   padding: 5px 10px;
+}
+
+.bord li {
+    position: relative;
+}
+
+.bord-li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transition: all 1s;
+}
+
+
+
+.bord li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.singup h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto';
+}
+
+
+.singup label {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.singup input {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.log-in h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto';
+}
+
+
+.log-in label {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.log-in input {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.btn-sign_up {
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
+.singup {
+    top: -100%;
+    transition: top 1s cubic-bezier(0.89, 0.31, 0.52, 1.41);
+}
+.singup.active {
+    top: 10%;
+}
+
+.log-in {
+    top: -100%;
+    width: 400px; 
+    height: 600px; 
+    border-radius: 10px; 
+    background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1.33) ), url("/images/sign_log1.jpg"); 
+    background-size: cover; 
+    position: fixed; 
+    z-index: 1000;  
+    left: 50%; 
+    transform: translateX(-50%);
+    transition: top 1s cubic-bezier(0.89, 0.31, 0.52, 1.41);
+}
+
+.log-in.active {
+    top: 10%;
+}
+
+.new_input {
+    border:none !important;
+    border-bottom: 1px solid white !important;
+    background: transparent !important;
+    border-radius: 0px !important;
+}
+
+.new_input:focus {
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
