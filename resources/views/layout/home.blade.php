@@ -162,7 +162,7 @@
                 <div class="satelite d-flex flex-column align-items-center justify-content-center pt-5 mt-5" >
                   <h1 class ='pb-5 text-light' style ='font-family: "Karla" ;'  >Discover More </h1>
                     <div class ='satelite_dot' style ='position:relative'>
-                            <img src="images/satelite.png" alt="">
+                            <img class ='satelite_img' src="images/satelite.png" alt="">
                             <div class ='dot' >
     
                             </div>

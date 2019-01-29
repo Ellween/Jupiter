@@ -85,9 +85,6 @@ padding: 0;
 }
 
 
-.planet_image {
-   
-}
 
 .content-2 {
     background-image:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1.33) ), url("/images/nebula2.jpg"); 
@@ -110,6 +107,84 @@ padding: 0;
     height: 150px; 
     transform: rotate(190deg);
 }
+
+
+.satelite_img {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* ENDCONTENT */
+
+/* PLanet Inputs */
+
+.planet_input {
+    position: relative;
+    padding-top: 30px;
+}
+
+.planet_input label {
+    top: 50%;
+    
+    position: absolute;
+    left: 10%;
+    transition: top 0.5s;
+}
+
+.planet_input label.active {
+    top: 105%;
+}
+
+
+
+.new_planet h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto';
+}
+
+
+.new_planet label {
+
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.new_planet input {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.planet_img {
+    color: white;
+    width: 40%;
+    margin: 0 auto;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.planet_img i {
+    font-size: 50px;
+}
+
+
+
+
+
+
+
+
 
 
 .swiper-container {
@@ -337,6 +412,24 @@ opacity: 0.0
 }
 
 .log-in.active {
+    top: 10%;
+}
+
+.new_planet {
+    top: -100%;
+    width: 400px; 
+    height: 600px; 
+    border-radius: 10px; 
+    background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1.33) ), url("/images/sign_log1.jpg"); 
+    background-size: cover; 
+    position: fixed; 
+    z-index: 1000;  
+    left: 50%; 
+    transform: translateX(-50%);
+    transition: top 1s cubic-bezier(0.89, 0.31, 0.52, 1.41);
+}
+
+.new_planet.active {
     top: 10%;
 }
 

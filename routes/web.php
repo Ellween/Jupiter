@@ -15,6 +15,10 @@ Route::get('/','PagesController@home');
 Route::get('/logout','Auth\LoginController@logout');
 
 
+// Add post
+
+Route::post('/add_post','PostController@store');
+
 
 
 Auth::routes();

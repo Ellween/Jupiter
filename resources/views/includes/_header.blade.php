@@ -93,3 +93,36 @@
 
 
 
+
+          {{-- Discover New Planet --}}
+
+
+          <div class="new_planet">
+                <i class="fas fa-times d-flex justify-content-end mt-3 mr-3 text-light" style="cursor: pointer;"></i>
+            <form class="form-horizontal pt-5" id ='upload_form' method="POST" action="">
+                    {{ csrf_field() }}
+                <h1>Add New Planet</h1>
+                <div class="input_planet_name planet_input pt-3">
+                        <label for="name">Planet Name</label>
+                        <input type="text" class ='form-control new_input' name ='name'>
+                </div>
+                
+                <div class="input_planet_history planet_input">
+                        <label for="description">Planet Description</label>
+                        <input type="text" class ='form-control new_input' name ='description'>
+                </div>
+                <div class="input_planet_image planet_input" style ='display: none;'>
+                        <label for="image">Planet Image</label>
+                        <input type="file" class ='es' name ='image'>
+                </div>
+
+                <div class="planet_img mt-5" style ='border : 1px solid white; color: white;'>
+                        
+                        <i class="fas fa-image d-flex justify-content-center"></i>
+                </div>
+                <div class="sign_up_btn d-flex justify-content-center pt-5">
+                    <button  type ='submit' class ='btn btn-primary btn-sign_up' style='background: transparent;'>Add Planet</button>
+                </div>
+            </form>
+          </div>
+
