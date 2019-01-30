@@ -182,8 +182,32 @@ padding: 0;
 
 
 
+/* Single Plaets CSS */
+
+    .single_planet_disc p {
+        font-family: 'Karla';
+        color: white;
+        font-size: 18px;
+    }
+
+    .single_planet h1 {
+        color: white;
+        font-family: 'Roboto';
+    }
+
+    .single_planet_people p {
+        text-align: justify;
+        color: white;
+        font-family: 'karla';
+    }
 
 
+    .planet_people {
+        display: flex;
+    }
+
+
+/* END SIngle Planet */
 
 
 
@@ -227,7 +251,9 @@ background: #eee;
 }
 
 
-
+.other_planets_disc {
+    width: 360%;
+}
 
 
 

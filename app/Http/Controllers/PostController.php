@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -10,18 +11,21 @@ class PostController extends Controller
     {
 
 
-        if ($request->hasFile('gif')) {
-            $gif = $request->file('gif');
-            $name = time().'.'.$gif->getClientOriginalExtension();
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/images');
-            $gif->move($destinationPath, $name);
+            $image->move($destinationPath, $name);
           }
   
         
         $post = Post::create([
             'name' => request('name'),
-            'image' => ,
-            'description' => 'description',
+            'image' => $name,
+            'description' => request('description'),
         ]);
+
+        return response()->json(['response' => 'success', 'post' => $post ]);
+
     }
 }

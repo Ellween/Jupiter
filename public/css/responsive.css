@@ -33,5 +33,23 @@
                 height: 550px !important;
             }
 
+
+
+            .all_cont {
+                overflow: hidden;
+            }
+
+            .single_planet_disc {
+                padding: 15px;
+                text-align: justify;
+            }
+
+            .single_planet_people p {
+                padding: 27px;
+            }
+
+            .planet_people {
+                display: inline;
+            }
             
         }

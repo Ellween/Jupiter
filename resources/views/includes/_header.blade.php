@@ -99,7 +99,7 @@
 
           <div class="new_planet">
                 <i class="fas fa-times d-flex justify-content-end mt-3 mr-3 text-light" style="cursor: pointer;"></i>
-            <form class="form-horizontal pt-5" id ='upload_form' method="POST" action="">
+            <form class="form-horizontal pt-5" id ='upload_form' method="POST" action="/add_post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                 <h1>Add New Planet</h1>
                 <div class="input_planet_name planet_input pt-3">
@@ -121,7 +121,7 @@
                         <i class="fas fa-image d-flex justify-content-center"></i>
                 </div>
                 <div class="sign_up_btn d-flex justify-content-center pt-5">
-                    <button  type ='submit' class ='btn btn-primary btn-sign_up' style='background: transparent;'>Add Planet</button>
+                    <button  type ='submit' class ='btn btn-primary btn-upload' style='background: transparent;'>Add Planet</button>
                 </div>
             </form>
           </div>

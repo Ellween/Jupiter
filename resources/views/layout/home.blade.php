@@ -54,109 +54,24 @@
         <div class="row p-0">
             <div class="col-lg-12 col-md-12 col-sm-12 py-5 content-2">
                 <div class ='container' style ='max-width: 1100px'>
-                    <div class= 'row'>
-                       <div class ='col-lg-6 col-md-6 col-sm-12'>
-                            <div class="other_planets d-flex flex-column pt-5">
-                                <h2 class ='text-center'>Planet NGC-3242</h2>
-                                <div class="planets  align-items-center pt-3">
-                                        <div class="other_planets_img" style ='background-image: url("images/other_planet_1.png"); background-size: cover;background-position: center'>
-                                                <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                            </div>
-                                            <div class="other_planets_disc">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis neque reiciendis dolore ratione aperiam harum eum quis voluptas rerum beatae? Deleniti, est voluptatibus. Id, reiciendis deleniti quas excepturi provident illum?
-                                            </div>
-                                </div>
-                               
-                            </div>
-                            <div class="other_planets d-flex flex-column pt-5">
-                                    <h2 class ='text-center'>Planet NGC-6384</h2>
-                                    <div class="planets  align-items-center pt-3">
-                                            <div class="other_planets_img" style ='background-image: url("images/other_planet_5.png"); background-size: cover;background-position: center'>
-                                                    <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                                </div>
-                                                <div class="other_planets_disc">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis neque reiciendis dolore ratione aperiam harum eum quis voluptas rerum beatae? Deleniti, est voluptatibus. Id, reiciendis deleniti quas excepturi provident illum?
-                                                </div>
-                                    </div>
-                                   
-                                </div>
+                    <div class= 'row d-flex posts'>
+                        @foreach ($post as $post)
+                        <div id = {{$post->id}} class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="other_planets d-flex flex-column pt-5">
-                                        <h2 class ='text-center'>Planet NGC-4364</h2>
+                                        <a style ='color: white; text-decoration: none;' href ="/post/{{$post->id}}"><h2 class ='text-center'>{{$post->name}}</h2></a>
                                         <div class="planets  align-items-center pt-3">
-                                                <div class="other_planets_img" style ='background-image: url("images/other_planet_6.png"); background-size: cover;background-position: center'>
-                                                        <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                                <div class="other_planets_img" style ='background-image: url("{{asset('images/' . $post->image)}}"); background-size: cover;background-position: center'>
+                                                        <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
                                                     </div>
                                                     <div class="other_planets_disc">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis neque reiciendis dolore ratione aperiam harum eum quis voluptas rerum beatae? Deleniti, est voluptatibus. Id, reiciendis deleniti quas excepturi provident illum?
+                                                        {{$post->description}}
                                                     </div>
                                         </div>
                                        
                                     </div>
-                                    <div class="other_planets d-flex flex-column pt-5">
-                                            <h2 class ='text-center'>Planet NGC-2346</h2>
-                                            <div class="planets  align-items-center pt-3">
-                                                    <div class="other_planets_img" style ='background-image: url("images/other_planet8.png"); background-size: cover;background-position: center'>
-                                                            <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                                        </div>
-                                                        <div class="other_planets_disc">
-                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis neque reiciendis dolore ratione aperiam harum eum quis voluptas rerum beatae? Deleniti, est voluptatibus. Id, reiciendis deleniti quas excepturi provident illum?
-                                                        </div>
-                                            </div>
-                                           
-                                        </div>
-
-                            
-                       </div>
-                       <div class ='col-lg-6 col-md-6 col-sm-12'>
-                            <div class="other_planets d-flex flex-column pt-5">
-                                    <h2 class ='text-center'>Planet NGC-9037</h2>
-                                    <div class="planets  align-items-center pt-3">
-                                            <div class="other_planets_img" style ='background-image: url("images/other_planet_7.png"); background-size: cover;background-position: center'>
-                                                    <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                                </div>
-                                                <div class="other_planets_disc">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis neque reiciendis dolore ratione aperiam harum eum quis voluptas rerum beatae? Deleniti, est voluptatibus. Id, reiciendis deleniti quas excepturi provident illum?
-                                                </div>
-                                    </div>
-                                   
-                                </div>
-                                <div class="other_planets d-flex flex-column pt-5">
-                                        <h2 class ='text-center'>Planet NGC-4536</h2>
-                                        <div class="planets  align-items-center pt-3">
-                                                <div class="other_planets_img" style ='background-image: url("images/other_planet_2.png"); background-size: cover;background-position: center'>
-                                                        <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                                    </div>
-                                                    <div class="other_planets_disc">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis neque reiciendis dolore ratione aperiam harum eum quis voluptas rerum beatae? Deleniti, est voluptatibus. Id, reiciendis deleniti quas excepturi provident illum?
-                                                    </div>
-                                        </div>
-                                       
-                                    </div>
-                                    <div class="other_planets d-flex flex-column pt-5">
-                                            <h2 class ='text-center'>Planet NGC-8475</h2>
-                                            <div class="planets  align-items-center pt-3">
-                                                    <div class="other_planets_img" style ='background-image: url("images/other_planet_3.png"); background-size: cover;background-position: center'>
-                                                            <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                                        </div>
-                                                        <div class="other_planets_disc">
-                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis neque reiciendis dolore ratione aperiam harum eum quis voluptas rerum beatae? Deleniti, est voluptatibus. Id, reiciendis deleniti quas excepturi provident illum?
-                                                        </div>
-                                            </div>
-                                           
-                                        </div>
-                                        <div class="other_planets d-flex flex-column pt-5">
-                                                <h2 class ='text-center'>Planet NGC-2903</h2>
-                                                <div class="planets  align-items-center pt-3">
-                                                        <div class="other_planets_img" style ='background-image: url("images/other_planet_4.png"); background-size: cover;background-position: center'>
-                                                                <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                                            </div>
-                                                            <div class="other_planets_disc">
-                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis neque reiciendis dolore ratione aperiam harum eum quis voluptas rerum beatae? Deleniti, est voluptatibus. Id, reiciendis deleniti quas excepturi provident illum?
-                                                            </div>
-                                                </div>
-                                               
-                                            </div>
-                       </div>
+                        </div>
+                        @endforeach
+                       
                     </div>
                 </div>
                 <div class="satelite d-flex flex-column align-items-center justify-content-center pt-5 mt-5" >

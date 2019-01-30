@@ -15,12 +15,9 @@ $(document).ready(function(){
 
 
     $('.fa-times').click(function(){
-        $('.singup').removeClass('active');
+        $(this).parent().removeClass('active');
     });
-    $('.close').click(function(){
-        $('.log-in').removeClass('active');
-    });
-
+ 
     $('.satelite_img').click(function(){
         $('.new_planet').toggleClass('active');
     });
@@ -72,7 +69,7 @@ var swiper = new Swiper('.swiper-container', {
 
 
 $(document).ready(function(){
-    $('.btn-sign_up').click(function(e){
+    $('.btn-upload').click(function(e){
         e.preventDefault();
 
         $.ajax({
@@ -84,7 +81,31 @@ $(document).ready(function(){
             processData: false,
             contentType: false,
             success:function(response){
-                console.log('yes')
+                
+                var post ="";
+
+                var post = `
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="other_planets d-flex flex-column pt-5">
+                        <h2 class ='text-center'>`+ response.post.name + `</h2>
+                        <div class="planets  align-items-center pt-3">
+                                <div class="other_planets_img" style ='background-image: url("images/`+ response.post.image + `"); background-size: cover;background-position: center'>
+                                        <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                    </div>
+                                    <div class="other_planets_disc">
+                                    `+ response.post.description + `
+                                    </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                
+                `;
+
+                $('.posts').append(post);
+
+                console.log(response)
             },
         });
 

@@ -13,6 +13,7 @@
 
 Route::get('/','PagesController@home');
 Route::get('/logout','Auth\LoginController@logout');
+Route::get('/post/{id}','PagesController@single');
 
 
 // Add post
