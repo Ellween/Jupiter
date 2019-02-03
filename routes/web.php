@@ -25,3 +25,11 @@ Route::post('/add_post','PostController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// admin Page
+
+Route::get('/admin', 'AdminController@index')->middleware('admin');
+Route::post('/user_delete/{id}','AdminController@delete');
+Route::get('/admin_planets','AdminController@planets')->middleware('admin');
+

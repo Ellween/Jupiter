@@ -70,6 +70,7 @@ var swiper = new Swiper('.swiper-container', {
 
 $(document).ready(function(){
     $('.btn-upload').click(function(e){
+        $('.new_planet').removeClass('active');
         e.preventDefault();
 
         $.ajax({
@@ -77,7 +78,7 @@ $(document).ready(function(){
             data:new FormData($("#upload_form")[0]),
             dataType:'json',
             async:false,
-            type:'post',
+            type:'POST',
             processData: false,
             contentType: false,
             success:function(response){
@@ -88,7 +89,7 @@ $(document).ready(function(){
                 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="other_planets d-flex flex-column pt-5">
-                        <h2 class ='text-center'>`+ response.post.name + `</h2>
+                <a style ='color: white; text-decoration: none;' href ="/post/`+ response.post.id +`"><h2 class ='text-center'>`+ response.post.name + `</h2></a> 
                         <div class="planets  align-items-center pt-3">
                                 <div class="other_planets_img" style ='background-image: url("images/`+ response.post.image + `"); background-size: cover;background-position: center'>
                                         <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
@@ -111,3 +112,38 @@ $(document).ready(function(){
 
     });
 });
+
+
+// $(document).ready(function(){
+//     $('.delete_user').click(function(e){
+//         e.preventDefault();
+
+//         var id = $(this).parent().attr('id');
+
+//         console.log('/user_delete/' + id );
+
+//         $.ajax ({
+//             headers: {
+//                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+//               },
+//             url: "/user_delete/" + id ,
+//             type : 'POST',
+
+//             success: function()
+//             {
+//                 console.log('done');
+//             },
+
+//             error: function()
+//             {
+//                 console.log('nope');
+//             }
+
+
+//         });
+
+//     });
+
+
+
+// });

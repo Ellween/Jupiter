@@ -72,6 +72,18 @@ padding: 0;
     transform: translateX(-50%);
 }
 
+.log-in input {
+    font-family: "Karla" !important;
+    font-size: 15px;
+    color: white !important;
+}
+
+.singup input {
+    font-family: "Karla" !important;
+    font-size: 15px;
+    color: white !important;
+}
+
 
 /* End SignUp and Login */
 
@@ -208,6 +220,53 @@ padding: 0;
 
 
 /* END SIngle Planet */
+
+
+/* Admin Css */
+
+.admin_config h4 {
+    color: white; 
+    font-family: "Roboto" ;
+    margin: 0 20px;
+    cursor: pointer;
+    position: relative;
+    padding: 3px 0px;
+}
+
+.admin_config h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0%;
+    border-radius: 5px;
+    background: white;
+    transition: all 1s;
+}
+
+.admin_config h4:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.all_users table {
+    color: white;
+    font-family: "Karla";
+}
+
+.edit_delete button {
+    margin: 0 20px;
+}
+
+
+
+
+
+
+
+
+/* End Admin CSS */
 
 
 
