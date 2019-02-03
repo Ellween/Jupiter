@@ -33,4 +33,5 @@ Route::get('/admin', 'AdminController@index')->middleware('admin');
 Route::post('/user_delete/{id}','AdminController@delete');
 Route::get('/admin_planets','AdminController@planets')->middleware('admin');
 Route::post('/post_delete/{post_id}','AdminController@post_delete');
+Route::post('/post_edit/{post_id}','AdminController@edit_post');
 

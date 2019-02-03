@@ -27,7 +27,10 @@
 
     @include('includes/_header')
 
+    
     <main>
+        @include('includes/messages')
+
             @yield('content')
 
     </main>

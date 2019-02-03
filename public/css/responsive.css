@@ -51,5 +51,34 @@
             .planet_people {
                 display: inline;
             }
+
+
+            /* Admin Reposnisve */
+
+            .all_users {
+                overflow: auto;
+            }
+
+
+            .over {
+                overflow: hidden;
+            }
+
+            .other_planets_disc
+            {
+                width: 100%;
+            }
+            .other_planets_disc textarea {
+                width: 100%;
+            }
+
+            .edit_and_delete  {
+                justify-content: center;
+            }
+
+            .admin_config  h4 {
+                padding-top: 20px;
+                font-size: 21px !important;
+            }
             
         }

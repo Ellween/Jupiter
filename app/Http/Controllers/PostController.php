@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Session;
 
 class PostController extends Controller
 {
@@ -24,6 +25,9 @@ class PostController extends Controller
             'image' => $name,
             'description' => request('description'),
         ]);
+
+
+
 
         return response()->json(['response' => 'success', 'post' => $post ]);
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Post;
+use Session;
 
 class AdminController extends Controller
 {
@@ -38,6 +39,35 @@ class AdminController extends Controller
         $post = Post::find($post_id);
         $post->delete();
 
+        Session::flash('danger','You Deleted Post Successfully!');
+
+
         return redirect('/admin_planets');
+    }
+
+    public function edit_post(Request $request , $post_id)
+    {
+
+        $post = Post::find($post_id);
+
+
+
+        if ($request->hasFile('planet_img')) {
+            $image = $request->file('planet_img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images');
+            $image->move($destinationPath, $name);
+          }
+
+        $post->name = $request->planet_name;
+        $post->description = $request->description;
+        $post->image = $name;
+
+        $post->save();
+
+        Session::flash('success','You Edited Post Successfully!');
+
+
+        return redirect("/admin_planets");
     }
 }

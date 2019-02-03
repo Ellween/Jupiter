@@ -26,6 +26,9 @@ $(document).ready(function(){
         $('.es').trigger('click');
     });
     
+    $('.delete_post_1').click(function(){
+        $('.delete_post_2').trigger('click');
+    });
 
 });  
 
@@ -112,6 +115,9 @@ $(document).ready(function(){
 
     });
 });
+
+
+
 
 
 // $(document).ready(function(){
