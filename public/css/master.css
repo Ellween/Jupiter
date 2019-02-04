@@ -161,6 +161,7 @@ padding: 0;
     color: white;
     font-weight: bold;
     font-family: 'Roboto';
+    font-size: 25px;
 }
 
 
@@ -175,7 +176,11 @@ padding: 0;
 .new_planet input {
     width: 80%;
     margin: 0 auto;
+    color: white !important;
+    font-family: "Karla" !important;
 }
+
+
 
 
 .planet_img {
@@ -191,6 +196,65 @@ padding: 0;
 }
 
 
+
+.step-1 {
+    display: block;
+}
+
+.step-1.active {
+    display: none;
+}
+
+.step-2 {
+    display: none;
+}
+
+.step-2.active{
+    display: block;
+}
+
+.step-3 {
+    display: none;
+}
+
+.step-3.active {
+    display: block;
+}
+
+.step-4 {
+    display: none;
+}
+
+.step-4.active {
+    display: block;
+}
+
+
+
+.step-1-end , .step-2-end , .step-3-end{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+    background-color:transparent;
+    border-color: #d43f3a;
+}
 
 
 
@@ -294,6 +358,17 @@ padding: 0;
 
 
 
+.alien_images label {
+    color: white;
+    font-family: "Roboto";
+
+}
+
+.alien_images input {
+    color: white;
+}
+
+
 
 
 /* End Admin CSS */
@@ -340,9 +415,9 @@ background: #eee;
 }
 
 
-.other_planets_disc {
+/* .other_planets_disc {
     width: 360%;
-}
+} */
 
 
 
@@ -533,7 +608,6 @@ opacity: 0.0
 .new_planet {
     top: -100%;
     width: 400px; 
-    height: 600px; 
     border-radius: 10px; 
     background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1.33) ), url("/images/sign_log1.jpg"); 
     background-size: cover; 

@@ -68,6 +68,17 @@ class AdminController extends Controller
         Session::flash('success','You Edited Post Successfully!');
 
 
-        return redirect("/admin_planets");
+        return redirect("/post_edit/$post_id");
+    }
+
+    public function post_edit($post_id)
+    {
+
+        $user = Auth::user();
+        $post = Post::find($post_id);
+
+        return view('admin.edit_post', compact('user','post'));
+
+
     }
 }

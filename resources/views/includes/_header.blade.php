@@ -99,30 +99,94 @@
 
           <div class="new_planet">
                 <i class="fas fa-times d-flex justify-content-end mt-3 mr-3 text-light" style="cursor: pointer;"></i>
-            <form class="form-horizontal pt-5" id ='upload_form' method="POST" action="/add_post" enctype="multipart/form-data">
+                <form class="form-horizontal pt-3" id ='upload_form' method="POST" action="/add_post" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                <h1>Add New Planet</h1>
-                <div class="input_planet_name planet_input pt-3">
-                        <label for="name">Planet Name</label>
-                        <input type="text" class ='form-control new_input' name ='name'>
+              <div class="step-1">
+                  
+                        <h1>Add New Planet Step-1</h1>
+                        <div class="input_planet_name planet_input pt-3">
+                                <label for="name">Planet Name</label>
+                                <input type="text" class ='form-control new_input' name ='name'>
+                        </div>
+                        
+                        <div class="input_planet_history planet_input">
+                                <label for="description">Planet Description</label>
+                                <input type="text" class ='form-control new_input' name ='description'>
+                        </div>
+                        <div class="input_planet_image planet_input" style ='display: none;'>
+                                <label for="image">Planet Image</label>
+                                <input type="file" class ='es' name ='image'>
+                        </div>
+        
+                        <div class="planet_img mt-5" style ='border : 1px solid white; color: white;'>
+                                
+                                <i class="fas fa-image d-flex justify-content-center"></i>
+                        </div>
+                        <div class="sign_up_btn d-flex justify-content-center pt-5 pb-5">
+                            {{-- <button  type ='submit' class ='btn btn-primary btn-upload' style='background: transparent;'>Next</button> --}}
+                            <p class ='step-1-end' >Next</p>
+                        </div>
+                    
+              </div>
+
+              <div class="step-2">
+                <h1>Add New Planet Step-2</h1>
+                <div class="input_planet_name planet_input pt-2">
+                        <label style ='position: relative !important;' for="full_description">Planet Full Description</label>
+                        <textarea style ='margin: 0 auto; width: 95%;' type="text" class ='form-control' cols="10" rows="5" name ='full_description'></textarea>
                 </div>
                 
-                <div class="input_planet_history planet_input">
-                        <label for="description">Planet Description</label>
-                        <input type="text" class ='form-control new_input' name ='description'>
-                </div>
-                <div class="input_planet_image planet_input" style ='display: none;'>
-                        <label for="image">Planet Image</label>
-                        <input type="file" class ='es' name ='image'>
-                </div>
+                <div class="sign_up_btn d-flex justify-content-center pt-5 pb-5">
+                        {{-- <button  type ='submit' class ='btn btn-primary btn-upload' style='background: transparent;'>Next</button> --}}
+                        <p class ='step-2-end' >Next</p>
+                    </div>
+              </div>
 
-                <div class="planet_img mt-5" style ='border : 1px solid white; color: white;'>
+
+              <div class="step-3">
+                    <h1>Add New Planet Step-3</h1>
+                   
+                    <div style ='margin: 0 auto; width: 95%;' class="input_planet_image ">
+                            <label for="image">Alien N1 Image</label>
+                            <input type="file" class ='es' name ='image'>
+                            <textarea  name="" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
+                    </div>
+
+
+                    <div  style ='margin: 0 auto; width: 95%;' class="input_planet_image pt-2">
+                            <label for="image">Alien N2 Image</label>
+                            <input type="file" class ='es' name ='image'>
+                            <textarea   name="" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
+                    </div>
+
+
+                    <div style ='margin: 0 auto; width: 95%;'  class="input_planet_image pt-2">
+                            <label for="image">Alien N2 Image</label>
+                            <input type="file" class ='es' name ='image'>
+                            <textarea  name="" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
+                    </div>
+    
+
+                    
+                    <div class="sign_up_btn d-flex justify-content-center pt-3 pb-3">
+                            {{-- <button  type ='submit' class ='btn btn-primary btn-upload' style='background: transparent;'>Next</button> --}}
+                            <p class ='step-3-end' >Next</p>
+                        </div>
+                  </div>
+
+
+                  <div class="step-4">
+                        <h1>Add New Planet Step-4</h1>
+                        <div style ='margin: 0 auto; width: 95%;'  class="input_planet_image pt-2">
+                                <label for="image">Leader Monster Image</label>
+                                <input type="file" class ='es' name ='image'>
+                                <textarea  name="" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
+                        </div>
                         
-                        <i class="fas fa-image d-flex justify-content-center"></i>
-                </div>
-                <div class="sign_up_btn d-flex justify-content-center pt-5">
-                    <button  type ='submit' class ='btn btn-primary btn-upload' style='background: transparent;'>Add Planet</button>
-                </div>
+                        <div class="sign_up_btn d-flex justify-content-center pt-5 pb-5">
+                                <button  type ='submit' class ='btn btn-primary btn-upload' style='background: transparent;'>Done</button>
+                            </div>
+                      </div>
             </form>
           </div>
 

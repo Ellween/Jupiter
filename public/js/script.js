@@ -30,6 +30,29 @@ $(document).ready(function(){
         $('.delete_post_2').trigger('click');
     });
 
+
+    $('.new_input').blur(function() {
+        if( $(this).val().length !== 0 ) {
+
+            $(this).prev().attr('style' , 'top: 100%');
+        }
+    });
+
+    $('.step-1-end').click(function(){
+        $('.step-1').addClass('active');
+        $('.step-2').addClass('active');
+    });
+    $('.step-2-end').click(function(){
+        $('.step-2').removeClass('active');
+        $('.step-3').addClass('active');
+    });
+
+    $('.step-3-end').click(function(){
+        $('.step-3').removeClass('active');
+        $('.step-4').addClass('active');
+    });
+
+
 });  
 
 $(document).ready(function(){
