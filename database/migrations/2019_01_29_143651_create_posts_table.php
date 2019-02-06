@@ -18,6 +18,15 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('image');
+            $table->text('full_description');
+            $table->string('alien_1');
+            $table->text('alien_1_description');
+            $table->string('alien_2');
+            $table->text('alien_2_description');
+            $table->string('alien_3');
+            $table->text('alien_3_description');
+            $table->string('leader_alien');
+            $table->text('leader_alien_description');
             $table->timestamps();
         });
     }

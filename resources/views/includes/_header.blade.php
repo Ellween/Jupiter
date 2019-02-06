@@ -115,7 +115,7 @@
                         </div>
                         <div class="input_planet_image planet_input" style ='display: none;'>
                                 <label for="image">Planet Image</label>
-                                <input type="file" class ='es' name ='image'>
+                                <input type="file" class ='es' name ='image-0'>
                         </div>
         
                         <div class="planet_img mt-5" style ='border : 1px solid white; color: white;'>
@@ -148,22 +148,22 @@
                    
                     <div style ='margin: 0 auto; width: 95%;' class="input_planet_image ">
                             <label for="image">Alien N1 Image</label>
-                            <input type="file" class ='es' name ='image'>
-                            <textarea  name="" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
+                            <input type="file" class ='' name ='image-1'>
+                            <textarea  name="alien_1_description" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
                     </div>
 
 
                     <div  style ='margin: 0 auto; width: 95%;' class="input_planet_image pt-2">
                             <label for="image">Alien N2 Image</label>
-                            <input type="file" class ='es' name ='image'>
-                            <textarea   name="" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
+                            <input type="file" class ='' name ='image-2'>
+                            <textarea   name="alien_2_description" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
                     </div>
 
 
                     <div style ='margin: 0 auto; width: 95%;'  class="input_planet_image pt-2">
                             <label for="image">Alien N2 Image</label>
-                            <input type="file" class ='es' name ='image'>
-                            <textarea  name="" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
+                            <input type="file" class ='' name ='image-3'>
+                            <textarea  name="alien_3_description" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
                     </div>
     
 
@@ -179,8 +179,8 @@
                         <h1>Add New Planet Step-4</h1>
                         <div style ='margin: 0 auto; width: 95%;'  class="input_planet_image pt-2">
                                 <label for="image">Leader Monster Image</label>
-                                <input type="file" class ='es' name ='image'>
-                                <textarea  name="" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
+                                <input type="file" class ='' name ='image-4'>
+                                <textarea  name="leader_description" class ='form-control mt-2' id="" cols="10" rows="5" placeholder="Alien Description"></textarea>
                         </div>
                         
                         <div class="sign_up_btn d-flex justify-content-center pt-5 pb-5">
