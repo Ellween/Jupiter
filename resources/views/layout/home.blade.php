@@ -56,6 +56,8 @@
                 <div class ='container' style ='max-width: 1100px'>
                     <div class= 'row d-flex posts'>
                         @foreach ($post as $post)
+
+                        @if($post->status != 1 )
                         <div id = {{$post->id}} class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="other_planets d-flex flex-column pt-5">
                                         <a style ='color: white; text-decoration: none;' href ="/post/{{$post->id}}"><h2 class ='text-center'>{{$post->name}}</h2></a>
@@ -70,6 +72,9 @@
                                        
                                     </div>
                         </div>
+                        @endif
+
+
                         @endforeach
                        
                     </div>

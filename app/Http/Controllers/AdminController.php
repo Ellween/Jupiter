@@ -7,6 +7,8 @@ use Auth;
 use App\User;
 use App\Post;
 use Session;
+use Illuminate\Support\Facades\Input;
+
 
 class AdminController extends Controller
 {
@@ -129,7 +131,7 @@ class AdminController extends Controller
           if($request->hasFile('image-2')){
 
             $image_3 = $request->file('image-2');
-            $filename_3 = time() . '.' . $image_2->getClientOriginalExtension();
+            $filename_3 = time() . '.' . $image_3->getClientOriginalExtension();
             $location = public_path('/images');
             $image_3->move($location, $filename_3);
           }
@@ -166,9 +168,13 @@ class AdminController extends Controller
             $filename_5 = $post->leader_alien;
         }
 
+        $input = Input::get('Publish');
 
-
-
+        if (isset($input)){
+            $post->status = 2;
+          }
+          else {
+       
         $post->name = $request->planet_name;
         $post->description = $request->description;
         $post->image = $filename_1;
@@ -181,7 +187,7 @@ class AdminController extends Controller
         $post->alien_2_description = $request->alien_2_description;
         $post->alien_3_description = $request->alien_3_description;
         $post->leader_alien_description = $request->leader_description;
-
+          }
         $post->save();
 
         Session::flash('success','You Edited Post Successfully!');

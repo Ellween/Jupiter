@@ -23,6 +23,9 @@
                                 <form action="/post_edit/{{$post->id}}" method='POST' enctype="multipart/form-data">
                                     @csrf
                                
+
+
+
                                         <div class="other_planets d-flex flex-column pt-5">
                                             <label for="planet_name">Planet Name</label>
                                                 <input type="text" name ='planet_name' class ='form-control' value ="{{$post->name}}">
@@ -112,9 +115,11 @@
                                                   
         
                                                             <div class="edit_delete d-flex pt-4">
-        
+                                                                    <button type ='submit' name ='Publish' class= 'btn btn-success' value = 'Publish'>Publish</button>
+
                                                                     <button type ='submit' class= 'btn btn-success'>Edit</button>
-                                                                    
+
+
                                                                 </div>
                                                              
                                                  
