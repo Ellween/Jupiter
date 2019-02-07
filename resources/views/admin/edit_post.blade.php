@@ -32,12 +32,12 @@
                                                                
                                                             </div>
                                                             <div class="other_planets_disc" style ='margin: 0 20px;'>
-                                                                <label for="description">Planet Mini Description</label>
-                                                               <textarea name="description" class ='form-control' value ="" id="" cols="70" rows="10">{{$post->description}}</textarea>
+                                                                <label for="description">Planet Full Description</label>
+                                                               <textarea name="full_description" class ='form-control' value ="" id="" cols="70" rows="10">{{$post->full_description}}</textarea>
                                                             </div>
                                                             <div class="other_planets_big_text">
-                                                                <label for="planet_full">Planet Full Description</label>
-                                                                    <textarea class ='form-control' name="planet_full" id="" cols="150" rows="10"></textarea>
+                                                                <label for="planet_full">Planet Mini Description</label>
+                                                                    <textarea class ='form-control' name="description" id="" cols="150" rows="10">{{$post->description}}</textarea>
                                                                 </div>
 
 
@@ -52,19 +52,58 @@
 
                                             </div>
 
-                                            <div class="alien_images d-flex flex-column pt-5 w-50">
-                                                <label for="alien_1">Alien N1:</label>
-                                                <input type="file" name ='alien_1' >
-                                                <textarea class ='form-control mt-3'name="alien_1_desc" id="" cols="30" rows="10"></textarea>
-                                                <label for="alien_2">Alien N2:</label>
-                                                <input type="file" name ='alien_2' >
-                                                <textarea class ='form-control mt-3'name="alien_1_desc" id="" cols="30" rows="10"></textarea>
-                                                <label for="alien_3">Alien N3:</label>
-                                                <input type="file" name ='alien_3'>
-                                                <textarea class ='form-control mt-3'name="alien_1_desc" id="" cols="30" rows="10"></textarea>
-                                                <label for="leader_alien">Leader Alien:</label>
-                                                <input type="file" name ='leader_alien' >
-                                                <textarea class ='form-control mt-3'name="alien_1_desc" id="" cols="30" rows="10"></textarea>
+                                            <div class="alien_images d-flex flex-column pt-5" style='width: 70%;'>
+                                                <div class="alien_1_full d-flex">
+                                                    <div>
+                                                            <label for="alien_1">Alien N1:</label>
+                                                            <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->alien_1)}}"); background-size: cover;background-position: center'>
+                                                                <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                                            </div>
+                                                            <input type="file" name ='image-1' >
+                                                    </div>
+                                                        
+                                                        <textarea class ='form-control mt-3' name="alien_1_description" id="" cols="30" rows="10">{{$post->alien_1_description}}</textarea>
+                                                </div>
+                                   
+                                                <div class="alien_2_full d-flex pt-5">
+                                                    <div>
+                                                            <label for="alien_2">Alien N2:</label>
+                                                            <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->alien_2)}}"); background-size: cover;background-position: center'>
+                                                                <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                                            </div>
+                                                            <input type="file" name ='image-2' >
+                                                    </div>
+                                                       
+                                                        <textarea class ='form-control mt-3'name="alien_2_description" id="" cols="30" rows="10">{{$post->alien_2_description}}</textarea>
+                                                </div>
+                                             
+                                                <div class="alien_3_full d-flex pt-5">
+                                                    <div>
+                                                            <label for="alien_3">Alien N3:</label>
+                                                            <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->alien_3)}}"); background-size: cover;background-position: center'>
+                                                                <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                                            </div>
+                                                            <input type="file" name ='image-3'>
+                                                    </div>
+                                                 
+                                                        <textarea class ='form-control mt-3'name="alien_3_description" id="" cols="30" rows="10">{{$post->alien_3_description}}</textarea>
+                                                </div>
+                                              
+
+                                                <div class="alien_leader_full d-flex pt-5">
+                                                    <div>
+                                                            <label for="leader_alien">Leader Alien:</label>
+                                                            <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->leader_alien)}}"); background-size: cover;background-position: center'>
+                                                                <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                                            </div>
+                                                            <input type="file" name ='image-4' >
+                                                    </div>
+                                                  
+                                                        <textarea class ='form-control mt-3'name="leader_description" id="" cols="70" rows="10">{{$post->leader_alien_description}}</textarea>
+                                                </div>
+                                               
+                                               
+                                                
                                             </div>
 
                                                 <div class="edit_and_delete d-flex">
@@ -87,7 +126,36 @@
 
 
                                 
-                               
+                                
+                        <div class="post_comments pt-5 mt-5">
+                                <table style="width: 100%;">
+                                        <tr>
+                                            <th>User Name</th>
+                                            <th>User Comment</th>
+                                           
+                                        </tr>
+                                        
+                                           
+                                            @foreach ($post->comments as $comment)
+                                            <tr>
+                                                 <td>{{$comment->title}}</td>
+                                                 <td>{{$comment->body}}</td>
+                                                 <td>
+                                                        <form action="/delete_comment/{{$comment->id}}"  method="POST">
+                                                            @csrf
+                                                                <button class ='btn btn-danger'>Delete</button>
+                                                        </form>
+                                                 </td>
+                                                 
+                                        
+                                             </tr>
+                                             
+                                            @endforeach
+                                         
+                                      
+                                    </table>
+                        </div>
+
                                
                             </div>
                    </div>

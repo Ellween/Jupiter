@@ -94,53 +94,78 @@ var swiper = new Swiper('.swiper-container', {
 //   Sending Post Ajax
 
 
-// $(document).ready(function(){
-//     $('.btn-upload').click(function(e){
-//         $('.new_planet').removeClass('active');
-//         e.preventDefault();
+$(document).ready(function(){
+    $('.btn-upload').click(function(e){
+        $('.new_planet').removeClass('active');
+        e.preventDefault();
 
-//         $.ajax({
-//             url:'/add_post',
-//             data:new FormData($("#upload_form")[0]),
-//             dataType:'json',
-//             async:false,
-//             type:'POST',
-//             processData: false,
-//             contentType: false,
-//             success:function(response){
+        $.ajax({
+            url:'/add_post',
+            data:new FormData($("#upload_form")[0]),
+            dataType:'json',
+            async:false,
+            type:'POST',
+            processData: false,
+            contentType: false,
+            success:function(response){
                 
-//                 var post ="";
+                var post ="";
 
-//                 var post = `
+                var post = `
                 
-//                 <div class="col-lg-6 col-md-6 col-sm-12">
-//                 <div class="other_planets d-flex flex-column pt-5">
-//                 <a style ='color: white; text-decoration: none;' href ="/post/`+ response.post.id +`"><h2 class ='text-center'>`+ response.post.name + `</h2></a> 
-//                         <div class="planets  align-items-center pt-3">
-//                                 <div class="other_planets_img" style ='background-image: url("images/`+ response.post.image + `"); background-size: cover;background-position: center'>
-//                                         <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-//                                     </div>
-//                                     <div class="other_planets_disc">
-//                                     `+ response.post.description + `
-//                                     </div>
-//                         </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="other_planets d-flex flex-column pt-5">
+                <a style ='color: white; text-decoration: none;' href ="/post/`+ response.post.id +`"><h2 class ='text-center'>`+ response.post.name + `</h2></a> 
+                        <div class="planets  align-items-center pt-3">
+                                <div class="other_planets_img" style ='background-image: url("images/`+ response.post.image + `"); background-size: cover;background-position: center'>
+                                        <img class ='w-100 h-100' src="images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                    </div>
+                                    <div class="other_planets_disc">
+                                    `+ response.post.description + `
+                                    </div>
+                        </div>
                        
-//                     </div>
-//                 </div>
+                    </div>
+                </div>
                 
-//                 `;
+                `;
 
-//                 $('.posts').append(post);
+                $('.posts').append(post);
 
-//                 console.log(response)
-//             },
-//         });
+                console.log(response)
+            },
+        });
 
-//     });
-// });
+    });
+});
 
 
 
+// ADD Comment 
+
+$(document).ready(function(){
+    $('.add_comment').click(function(e){
+        e.preventDefault();
+
+        var data = $('.comment_form').serialize();
+        var id = $(this).parent().parent().parent().attr('id');
+
+        $.ajax({
+            type:"POST",
+            url:'/add_comment/' + id,
+            data: data,
+
+            success: function(data){
+
+                console.log(data)
+
+                $('.all_comments').append(data);
+            }
+        });
+
+
+    });
+});
 
 
 // $(document).ready(function(){

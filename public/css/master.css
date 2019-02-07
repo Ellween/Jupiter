@@ -181,6 +181,9 @@ padding: 0;
 }
 
 
+.other_planets_disc {
+    width: 320%;
+}
 
 
 .planet_img {
@@ -283,6 +286,19 @@ padding: 0;
     }
 
 
+    .all_comments p {
+        color: white;
+        font-family: "Karla";
+    }
+    .all_comments h2 {
+        font-family: "Roboto";
+        color: white;
+    }
+
+    .all_comments p {
+        width: 75%;
+    }
+
 /* END SIngle Planet */
 
 
@@ -369,8 +385,17 @@ padding: 0;
 }
 
 
+.alien_images label {
+    font-family: "Karla";
+    font-size: 20px;
+    font-weight: bold;
+}
 
 
+.comment_header  {
+    font-family: "Karla";
+
+}
 /* End Admin CSS */
 
 

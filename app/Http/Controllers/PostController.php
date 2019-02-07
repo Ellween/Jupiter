@@ -33,18 +33,6 @@ class PostController extends Controller
     }
 
 
-
-
-     
-
-        // if ($request->hasFile('image')) {
-        //     $image = $request->file('image');
-        //     $name = time().'.'.$image->getClientOriginalExtension();
-        //     $destinationPath = public_path('/images');
-        //     $image->move($destinationPath, $name);
-        //   }
-  
-
         $post = Post::create([
             'name' => request('name'),
             'image' => $name[0],

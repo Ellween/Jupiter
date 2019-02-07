@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 use App\Post;
+use App\Comment;
 
 use Illuminate\Http\Request;
 
@@ -20,6 +21,6 @@ class PagesController extends Controller
     {
         $post = Post::find($id);
         $user = Auth::user();
-        return view('layout.single_planet', compact('post','user'));
+        return view('layout.single_planet', compact('post','user','comments'));
     }
 }
