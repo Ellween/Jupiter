@@ -42,3 +42,13 @@ Route::get('/post_edit/{post_id}','AdminController@post_edit');
 
 Route::post('/add_comment/{post_id}','CommentController@store');
 Route::post('/delete_comment/{com_id}','CommentController@delete');
+
+
+// Add Vote
+
+Route::post('/add_vote/{id}','PostController@storeVote');
+
+// Add Favorite
+
+Route::post('/add_fav/{post_id}','PostController@storeFav');
+Route::post('/remove_fav/{post_id}','PostController@deleteFav');

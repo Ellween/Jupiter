@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use Session;
-
+use Auth;
 class PostController extends Controller
 {
     public function store(Request $request)
@@ -54,5 +54,35 @@ class PostController extends Controller
 
         return response()->json(['response' => 'success', 'post' => $post ]);
 
+    }
+
+
+
+    public function storeVote($id)
+    {
+
+        $post = Post::find($id);
+
+        $post->vote = $post->vote + 1;
+
+        $post->save();
+
+    }
+
+
+    public function storeFav($post_id)
+    {
+        $post = Post::find($post_id);
+        $user = Auth::user();
+
+        $post->users()->sync($user->id , false);
+    }
+
+    public function deleteFav($post_id)
+    {
+        $post = Post::find($post_id);
+        $user = Auth::user();
+
+        $post->users()->detach();
     }
 }

@@ -13,8 +13,14 @@ class PagesController extends Controller
     public function home()
     {
         $user = Auth::user();
-        $post = Post::all();
-        return view('layout.home', compact('user','post'));
+        
+        // $post = Post::orderBy('vote','desc')->get();
+        $post= Post::with('users')->get();
+        if(Auth::check()){
+            $posts_array = $user->posts->pluck('id');
+
+        }
+        return view('layout.home', compact('user','post','posts_array'));
     }
 
     public function single($id)

@@ -201,3 +201,88 @@ $(document).ready(function(){
 
 
 // });
+
+
+
+
+
+// Give Vote
+
+$(document).ready(function(){
+    $('.vote').click(function(){
+
+        var  vote_p = $(this).next();
+        var id = $(this).parent().parent().parent().parent().attr('id');
+
+        $.ajax({
+            headers: {
+                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            },
+            type:"POST",
+            url:'/add_vote/' + id,
+            
+
+            success: function(){
+
+                
+                $(vote_p).text(parseInt(vote_p.text()) + 1) ;
+
+                
+                
+            }
+        });
+
+    });
+
+
+
+        $('.star').click(function(){
+            var star = $(this);
+            var id = $(this).parent().parent().parent().parent().attr('id');
+            $.ajax({
+                headers: {
+                     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                },
+
+                type:"POST",
+                url:'/add_fav/' + id,
+                
+    
+                success: function(){
+    
+                    
+                   $(star).attr('style','color: yellow');
+    
+                    
+                    
+                }
+            });
+       
+    });
+
+    $('.unstar').click(function(){
+        
+
+        var star = $(this);
+
+        var id = $(this).parent().parent().parent().parent().attr('id');
+        $.ajax({
+            headers: {
+                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            },
+
+            type:"POST",
+            url:'/remove_fav/' + id,
+            
+
+            success: function(){
+
+                
+               $(star).attr('style','color: white');
+
+                
+                
+            }
+        });
+    });
+});

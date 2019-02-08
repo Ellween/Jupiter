@@ -37,9 +37,10 @@
                             
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                         <div class="single_planet_population pt-5">
-                                            <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->alien_3)}}"); background-size: cover;background-position: center'>
-                                                <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                            </div>
+                                                <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->alien_1)}}"); background-size: cover;background-position: center'>
+                                                    <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                                   
+                                                </div>
                                             <div class="single_planet_people pt-5">
                                                 <p>{{$post->alien_1_description}}</p>
                                             </div>
@@ -47,9 +48,10 @@
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-12">
                                             <div class="single_planet_population pt-5">
-                                                <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->alien_2)}}"); background-size: cover;background-position: center'>
-                                                    <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                                </div>
+                                                    <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->alien_2)}}"); background-size: cover;background-position: center'>
+                                                        <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                                       
+                                                    </div>
                                                 <div class="single_planet_people pt-5">
                                                     <p>{{$post->alien_2_description}}</p>
                                                 
@@ -58,9 +60,10 @@
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-12">
                                                 <div class="single_planet_population pt-5">
-                                                    <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->alien_3)}}"); background-size: cover;background-position: center'>
-                                                        <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
-                                                    </div>
+                                                        <div class="planet_aliens-1" style ='background-image: url("{{asset('images/' . $post->alien_3)}}"); background-size: cover;background-position: center'>
+                                                            <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
+                                                           
+                                                        </div>
                                                     <div class="single_planet_people pt-5">
                                                         <p>{{$post->alien_3_description}}</p>
                                                     </div>
