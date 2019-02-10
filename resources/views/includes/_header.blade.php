@@ -19,7 +19,7 @@
 
                 <ul class ='d-flex align-items-center justify-content-center m-0 p-0 bord' >
                     @if(Auth::check())
-                        <li class =''><img src="{{asset('images/' . $user->avatar)}}" alt="" style='width: 23px;'></li>
+                        <a href ='/user_profile'><li class =''><img src="{{asset('images/' . $user->avatar)}}" alt="" style='width: 23px;'></li></a>
                         <a style ='text-decoration: none; color: white; font-family: Roboto;' href ='/logout'><li class ='' >Logout</li></a>
                     @else
                         <li class ='bord-li login'>LogIn</li>

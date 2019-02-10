@@ -309,6 +309,12 @@ padding: 0;
 
 /* Admin Css */
 
+
+.post_comments tr {
+    color: white;
+    font-family: "karla";
+}
+
 .admin_config h4 {
     color: white; 
     font-family: "Roboto" ;
@@ -403,6 +409,28 @@ padding: 0;
 }
 /* End Admin CSS */
 
+
+
+/* User Private Page CSS */
+
+.about_user p {
+    color:white;
+    font-family: "Karla";
+}
+
+
+.user_settings h1 {
+    color: white;
+    font-family: 'Roboto';
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.user_settings input {
+    margin-top: 20px;
+}
+
+/* END USER Private Page css */
 
 
 .swiper-container {

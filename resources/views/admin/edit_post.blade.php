@@ -12,7 +12,7 @@
                <div class="admin_config d-flex justify-content-center">
                     <a href="/admin"><h4>Users</h4></a>
                    <a href="/admin_planets"><h4>Planets</h4></a>
-                   <a href="/admin_draft"><h4>Draft Planets</h4></a>
+                   <a href="/draft_posts"><h4>Draft Planets</h4></a>
                </div>
 
                <div class="container">
@@ -132,7 +132,7 @@
 
                                 
                                 
-                        <div class="post_comments pt-5 mt-5">
+                        <div class="post_comments pt-5 mt-5 col-lg-12 col-md-12 col-sm-12">
                                 <table style="width: 100%;">
                                         <tr>
                                             <th>User Name</th>

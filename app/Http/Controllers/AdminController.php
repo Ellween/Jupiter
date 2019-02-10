@@ -94,26 +94,15 @@ class AdminController extends Controller
 
 
         if($request->hasFile('planet_img')){
-
-           
-
-
-         
-
             $image_1 = $request->file('planet_img');
             $filename_1 = time() . '.' . $image_1->getClientOriginalExtension();
             $location = public_path('/images');
-            $image_1->move($location, $filename_1);
-          
-           
+            $image_1->move($location, $filename_1);       
           }
 
           else {
             $filename_1 = $post->image;
         }
-
-
-         
 
           if($request->hasFile('image-1')){
 
@@ -193,7 +182,7 @@ class AdminController extends Controller
         Session::flash('success','You Edited Post Successfully!');
 
 
-        return redirect("/post_edit/$post_id");
+        return redirect()->back();
     }
 
     public function post_edit($post_id)
@@ -205,5 +194,13 @@ class AdminController extends Controller
         return view('admin.edit_post', compact('user','post'));
 
 
+    }
+
+
+    public function draft()
+    {
+      $user = Auth::user();
+      $post = Post::all();
+      return view('admin.draft', compact('user','post'));
     }
 }
