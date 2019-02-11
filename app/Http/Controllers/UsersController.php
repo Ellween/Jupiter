@@ -63,4 +63,9 @@ class UsersController extends Controller
         return view('user.favorite',compact('post','user'));
 
     }
+
+    public function report($com_id)
+    {
+
+    }
 }

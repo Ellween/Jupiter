@@ -7,6 +7,7 @@ use Auth;
 use App\User;
 use App\Post;
 use Session;
+use App\Comment;
 use Illuminate\Support\Facades\Input;
 
 
@@ -202,5 +203,20 @@ class AdminController extends Controller
       $user = Auth::user();
       $post = Post::all();
       return view('admin.draft', compact('user','post'));
+    }
+
+  
+
+    public function report($com_id)
+    {
+
+      $user = Auth::user();
+
+
+      $comment = Comment::find($com_id);
+
+
+
+      return view('admin.report',compact('comment', 'user'));
     }
 }

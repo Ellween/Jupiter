@@ -28,6 +28,7 @@ Route::post('/post_delete/{post_id}','AdminController@post_delete');
 Route::post('/post_edit/{post_id}','AdminController@edit_post');
 Route::get('/post_edit/{post_id}','AdminController@post_edit');
 Route::get('/draft_posts','AdminController@draft');
+Route::get('/report_comment/{com_id}','AdminController@report');
 // Add Comment
 
 Route::post('/add_comment/{post_id}','CommentController@store');
