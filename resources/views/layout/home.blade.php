@@ -80,12 +80,20 @@
                                                         <img class ='w-100 h-100' src="/images/other_planet_1.png" alt="" style ='visibility: hidden;'>
                                                     </div>
                                                     <div class="other_planets_disc">
-                                                        {{$post->description}}
+                                                        {{$post->description}}  
+
+
+                                                        <p class ='pt-4' >Author : {{$post->authors->name}} </p>
+                                                        
+                                                        
                                                     </div>
-                                        </div>
+
+
+                                                   
                                        
                                     </div>
                         </div>
+                    </div>
                         @endif
 
 

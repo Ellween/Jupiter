@@ -13,7 +13,7 @@
                    <a href="/user_profile"><h4>Profile</h4></a>
                    <a href="/user_settings"><h4>Settings</h4></a>
                    <a href="#"><h4>My Posts</h4></a>
-                   <a href="#"><h4>Favorite Posts</h4></a>
+                   <a href="/favorite"><h4>Favorite Posts</h4></a>
                </div>
 
                <div class="container">

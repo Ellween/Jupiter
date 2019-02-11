@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('.fa-search').click(function(){
         $('.search').toggleClass("active");
+        $('#search_id').focus();
     });
 
     $('.signup').click(function(){
@@ -52,6 +53,14 @@ $(document).ready(function(){
         $('.step-4').addClass('active');
     });
 
+
+    $('.search').on('keydown', function(e) {
+        if(e.keyCode == 13){
+          
+          $('.search_btn').trigger('click');
+          return false;
+        }
+      });
 
 });  
 

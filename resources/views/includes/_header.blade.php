@@ -8,11 +8,15 @@
             </button>
           
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <div class="search_bar">
-                        <i class="fas fa-search"></i>
-                        <input type="text" class ='search' placeholder="Search Planet...">
-
-                </div>
+                    <form action="/search" method="POST">
+                        @csrf
+                                <div class="search_bar">
+                                                <i class="fas fa-search"></i>
+                                                <input name ='search' type="text" id = 'search_id' class ='search' placeholder="Search Planet...">
+                                                <button class ='search_btn' type ='submit'>search</button>
+                                        </div>
+                    </form>
+               
                
 
 

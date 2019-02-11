@@ -51,10 +51,16 @@ class UsersController extends Controller
         $user->avatar = $new_avatar_name;
 
         $user->save();
-
-
         return view('user.settings' , compact('user'));
+    }
 
-        
+    public function favorite()
+    {
+        $user = Auth::user();
+
+        $post = $user->posts()->get();
+
+        return view('user.favorite',compact('post','user'));
+
     }
 }

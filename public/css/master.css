@@ -84,6 +84,9 @@ padding: 0;
     color: white !important;
 }
 
+.search_btn {
+    display: none;
+}
 
 /* End SignUp and Login */
 

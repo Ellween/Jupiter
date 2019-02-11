@@ -45,3 +45,8 @@ Route::post('/remove_fav/{post_id}','PostController@deleteFav');
 Route::get('/user_profile','UsersController@index');
 Route::get('/user_settings','UsersController@settings');
 Route::post('/change','UsersController@change');
+Route::get('/favorite','UsersController@favorite');
+
+// Search SyStem
+
+Route::post('/search','PostController@search');

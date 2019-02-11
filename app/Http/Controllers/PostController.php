@@ -12,6 +12,7 @@ class PostController extends Controller
     {
 
 
+    $user = Auth::user();
 
     $files = [];
 
@@ -49,10 +50,19 @@ class PostController extends Controller
         ]);
 
 
-            
 
+        $post->authors()->associate($user);
+        $post->save();
+
+        
 
         return response()->json(['response' => 'success', 'post' => $post ]);
+
+    }
+
+
+    public function Author()
+    {
 
     }
 
@@ -84,5 +94,33 @@ class PostController extends Controller
         $user = Auth::user();
 
         $post->users()->detach();
+    }
+
+    public function search(Request $request)
+    {
+
+       // $posts = Post::all();
+        $item = $request->search;
+
+
+        // foreach($posts as $p)
+        // {
+        //     if($item = $p->name)
+        //     {
+        //         $post = Post::where('name', $item)->get();
+            
+                
+        //     }
+        //     else {
+        //         echo "Nothing";
+        //     }
+        // }
+
+        $posts = Post::where('name', 'LIKE', '%'.$item.'%')->get();
+
+
+        return view('layout.search',compact('posts'));
+
+
     }
 }

@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->integer('status')->default(1);
             $table->integer('vote')->default(0);
+            $table->integer('authors_id')->nullable();
             $table->string('name');
             $table->text('description');
             $table->string('image');

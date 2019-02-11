@@ -15,7 +15,7 @@ class PagesController extends Controller
         $user = Auth::user();
         
         // $post = Post::orderBy('vote','desc')->get();
-        $post= Post::with('users')->get();
+        $post= Post::with('users')->orderBy('vote','desc')->get();
         if(Auth::check()){
             $posts_array = $user->posts->pluck('id');
 
