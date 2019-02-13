@@ -62,6 +62,11 @@ $(document).ready(function(){
         }
       });
 
+
+      $('.show-report').click(function(){
+        $(this).parent().next().toggleClass('active');
+      });
+
 });  
 
 $(document).ready(function(){

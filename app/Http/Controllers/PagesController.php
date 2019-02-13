@@ -5,13 +5,16 @@ use Auth;
 use App\User;
 use App\Post;
 use App\Comment;
+use App\Report;
 
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function home()
-    {
+    {    
+        
+
         $user = Auth::user();
         
         // $post = Post::orderBy('vote','desc')->get();
@@ -25,8 +28,11 @@ class PagesController extends Controller
 
     public function single($id)
     {
+
+
         $post = Post::find($id);
         $user = Auth::user();
-        return view('layout.single_planet', compact('post','user','comments'));
+        $reports = Report::all();
+        return view('layout.single_planet', compact('post','user','comments','reports'));
     }
 }

@@ -8,7 +8,7 @@ class Comment extends Model
 {
 
     protected $fillable = [
-        'title', 'body','post_id', 
+        'title', 'body','post_id','user_id', 'report_type','report_reason',
     ];
 
     protected $table = 'comments';
@@ -18,4 +18,11 @@ class Comment extends Model
     {
         return $this->belognsTo('App\Post');
     }
+
+    public function reports()
+    {
+        return $this->belongsToMany('App\Report');
+    }
+    
+
 }

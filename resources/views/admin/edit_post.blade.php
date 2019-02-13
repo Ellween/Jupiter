@@ -14,6 +14,7 @@
                    <a href="/admin_planets"><h4>Planets</h4></a>
                    <a href="/draft_posts"><h4>Draft Planets</h4></a>
                    <a href="/report"><h4>Report Comments</h4></a>
+                   <a href="/category"><h4>Report Category</h4></a>
 
                </div>
 

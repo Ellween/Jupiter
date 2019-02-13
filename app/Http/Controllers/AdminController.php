@@ -8,6 +8,7 @@ use App\User;
 use App\Post;
 use Session;
 use App\Comment;
+use App\Report;
 use Illuminate\Support\Facades\Input;
 
 
@@ -207,16 +208,61 @@ class AdminController extends Controller
 
   
 
-    public function report($com_id)
+    public function report(Request $request , $com_id)
     {
 
+      
       $user = Auth::user();
-
 
       $comment = Comment::find($com_id);
 
 
+      $report = new Report;
 
-      return view('admin.report',compact('comment', 'user'));
+      $report->category = 'a';
+      $report->report_reason = 'aa';
+
+
+      $report->comments()->associate($comment);
+
+      $report->save();
+
+
+      Session::flash('success','You Reported Post Succesfully!');
+
+
+      return redirect()->back();
+    }
+
+
+    public function getReport()
+    {
+      $user = Auth::user();
+
+      $reports = Report::all();
+
+      
+      return view('admin.report',compact('user','reports'));
+    }
+
+    public function getCategory()
+    {
+      $user = Auth::user();
+      $report_c = Report::all();
+
+      return view('admin.category',compact('user','report_c'));
+    }
+
+    public function storeCategory(Request $request)
+    {
+
+      
+
+      $report_c = Report::create([
+        'category' => request('category'),
+      ]);
+
+      return redirect()->back();
+
     }
 }

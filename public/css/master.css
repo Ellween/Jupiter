@@ -72,6 +72,29 @@ padding: 0;
     transform: translateX(-50%);
 }
 
+
+.report_form {
+    min-height: 0px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.report_form.active {
+    max-height: 500px;
+    min-height: 270px;
+}
+
+
+.report_div h3,p {
+    color: white;
+    font-family: "Karla";
+}
+
+.report_div.active {
+    display: block;
+}
+
 .log-in input {
     font-family: "Karla" !important;
     font-size: 15px;
@@ -86,6 +109,11 @@ padding: 0;
 
 .search_btn {
     display: none;
+}
+
+.all_category li {
+    color: white;
+    font-family: "Karla";
 }
 
 /* End SignUp and Login */
