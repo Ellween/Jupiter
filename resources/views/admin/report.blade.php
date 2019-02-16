@@ -26,7 +26,7 @@
                                             <th>Author Comment</th>
                                             <th>Reported Reason</th>
                                             <th>Reported Category</th>
-                                           
+                                            
                                         </tr>
                                         
                                            
@@ -36,7 +36,23 @@
                                                  <td>{{$report->comments->body}}</td>
                                                  <td>{{$report->report_reason}}</td>
                                                  <td>{{$report->categories->category}}</td>
-                                                 
+                                                 <td>
+                                                    
+                                                    @foreach ($users as $user)
+                                                        @if($report->comments->user_id == $user->id)
+                                                            @if($user->blocked == 0)
+                                                                <form name ='{{$report->blocked}}'  action="/block_user/{{$report->comments->user_id}}" method="POST">
+                                                                    @csrf
+                                                                    <button class ='btn btn-danger'>Block User</button>
+                                                                </form>
+                                                            @else 
+                                                            <p>a</p>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                     
+                                                     
+                                                 </td>
                                                  
                                         
                                              </tr>

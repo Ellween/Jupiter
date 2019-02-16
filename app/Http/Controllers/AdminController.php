@@ -246,10 +246,12 @@ class AdminController extends Controller
     {
       $user = Auth::user();
 
+      $users = User::all();
+
       $reports = Report::all();
 
       
-      return view('admin.report',compact('user','reports'));
+      return view('admin.report',compact('user','reports','users'));
     }
 
     public function getCategory()
@@ -272,4 +274,15 @@ class AdminController extends Controller
       return redirect()->back();
 
     }
+
+    public function block_user(Request $request , $id)
+    {
+      
+      $user = User::find($id);
+
+      $user->blocked = 1;
+
+      $user->save();
+    }
+
 }

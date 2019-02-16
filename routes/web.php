@@ -32,6 +32,7 @@ Route::post('/report_comment/{com_id}','AdminController@report');
 Route::get('/report','AdminController@getReport');
 Route::get('/category','AdminController@getCategory');
 Route::post('/add_category','AdminController@storeCategory');
+Route::post('/block_user/{id}','AdminController@block_user');
 // Add Comment
 
 Route::post('/add_comment/{post_id}','CommentController@store');
