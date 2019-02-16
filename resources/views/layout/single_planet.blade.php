@@ -130,7 +130,7 @@
                                             <div class="report_form">
                                                     <form action="/report_comment/{{ $comment->id }}" method="POST">
                                                         @csrf
-                                                        @foreach ($reports as $category)
+                                                        @foreach ($categories as $category)
                                                         <div>
                                                                 <input type="radio" name="report_category" value="{{$category->id}}"
                                                                        >

@@ -22,10 +22,10 @@
                         <div class="post_comments pt-5 mt-5 col-lg-12 col-md-12 col-sm-12">
                                 <table style="width: 100%;">
                                         <tr>
-                                            <th>User Name</th>
-                                            <th>User Comment</th>
-                                            <th>Report Reason</th>
-                                            <th>Report Type</th>
+                                            <th>Comment Author</th>
+                                            <th>Author Comment</th>
+                                            <th>Reported Reason</th>
+                                            <th>Reported Category</th>
                                            
                                         </tr>
                                         
@@ -35,7 +35,7 @@
                                                  <td>{{$report->comments->title}}</td>
                                                  <td>{{$report->comments->body}}</td>
                                                  <td>{{$report->report_reason}}</td>
-                                                 <td>{{$report->category}}</td>
+                                                 <td>{{$report->categories->category}}</td>
                                                  
                                                  
                                         

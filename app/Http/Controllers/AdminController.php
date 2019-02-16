@@ -9,6 +9,7 @@ use App\Post;
 use Session;
 use App\Comment;
 use App\Report;
+use App\Category;
 use Illuminate\Support\Facades\Input;
 
 
@@ -215,15 +216,21 @@ class AdminController extends Controller
       $user = Auth::user();
 
       $comment = Comment::find($com_id);
+      
+      $category = $request->report_category;
+  
 
 
       $report = new Report;
 
-      $report->category = 'a';
-      $report->report_reason = 'aa';
+    
+      $report->report_reason = $request->report_reason;
+      
 
 
       $report->comments()->associate($comment);
+      $report->categories()->associate($category);
+
 
       $report->save();
 
@@ -248,9 +255,9 @@ class AdminController extends Controller
     public function getCategory()
     {
       $user = Auth::user();
-      $report_c = Report::all();
+      $categories = Category::all();
 
-      return view('admin.category',compact('user','report_c'));
+      return view('admin.category',compact('user','categories'));
     }
 
     public function storeCategory(Request $request)
@@ -258,7 +265,7 @@ class AdminController extends Controller
 
       
 
-      $report_c = Report::create([
+      $category = Category::create([
         'category' => request('category'),
       ]);
 

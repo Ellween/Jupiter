@@ -28,7 +28,7 @@
 
                 <div class="all_category d-flex justify-content-center pt-5">
                         <ul>
-                                @foreach ($report_c as $category)
+                                @foreach ($categories as $category)
                                 <div class="category_delete d-flex align-items-center pt-4">
                                         <li>{{$category->category}}</li> 
                                         <button class ='btn btn-danger ml-5' type ='submit' >Delete</button>

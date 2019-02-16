@@ -27,5 +27,7 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
+   
+
 
 }

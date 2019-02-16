@@ -15,4 +15,9 @@ class Report extends Model
     {
         return $this->belongsTo('App\Comment');
     }
+
+    public function categories()
+    {
+        return $this->belongsTo('App\Category');
+    }
 }
