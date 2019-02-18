@@ -92,6 +92,8 @@
             </div>
             <div class="container">
                 <div class="row">
+
+                    @if($user->blocked != 1 )
                     <form class= 'w-100 comment_form'   action="/add_comment/{{$post->id}}" method="POST">
                         @csrf
                             <h1 class ='pt-5 mt-5 text-center w-100 text-light comment_header' >What Do You Think About This Planet</h1>
@@ -109,7 +111,9 @@
                                 </div>
                             </div>
                     </form>
-                     
+                     @else 
+                        <h1>You Are Blocked</h1>
+                     @endif
 
                    
 

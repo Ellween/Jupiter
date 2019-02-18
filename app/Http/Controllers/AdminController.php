@@ -215,6 +215,8 @@ class AdminController extends Controller
       
       $user = Auth::user();
 
+      
+
       $comment = Comment::find($com_id);
       
       $category = $request->report_category;
@@ -226,6 +228,7 @@ class AdminController extends Controller
     
       $report->report_reason = $request->report_reason;
       
+      $report->reported_by = $user->name;
 
 
       $report->comments()->associate($comment);
@@ -245,13 +248,10 @@ class AdminController extends Controller
     public function getReport()
     {
       $user = Auth::user();
-
-      $users = User::all();
-
       $reports = Report::all();
 
       
-      return view('admin.report',compact('user','reports','users'));
+      return view('admin.report',compact('user','reports','users','users_array'));
     }
 
     public function getCategory()
@@ -283,6 +283,18 @@ class AdminController extends Controller
       $user->blocked = 1;
 
       $user->save();
+      return redirect()->back();
+
+    }
+
+    public function unblock_user(Request $request, $id)
+
+    {
+      $user = User::find($id);
+      $user->blocked = 0;
+      $user->save();
+      return redirect()->back();
+
     }
 
 }

@@ -18,6 +18,7 @@ class CreateReportsTable extends Migration
             $table->integer('categories_id');
             $table->text('report_reason');
             $table->integer('comments_id');
+            $table->string('reported_by');
             $table->timestamps();
         });
     }

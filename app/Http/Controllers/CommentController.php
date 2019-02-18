@@ -14,14 +14,23 @@ class CommentController extends Controller
 
         $user = Auth::user();
 
-        $comment = Comment::create([
-            'title' => request('comment_title'),
-            'body' => request('comment_body'),
-            'post_id' => $post_id,
-            'user_id' => $user->id,
-        ]);
+
+        // $comment = Comment::create([
+        //     'title' => request('comment_title'),
+        //     'body' => request('comment_body')   ,
+        //     'post_id' => $post_id,
+        // ]);
+
+        $comment = new Comment;
+        $comment->title = $request->comment_title;
+        $comment->body = $request->comment_body;
+        $comment->post_id = $post_id;
+
+        $comment->users()->associate($user->id);
+        $comment->save();
 
 
+        
         return view('layout.comments',compact('comment'))->render();
     }
 

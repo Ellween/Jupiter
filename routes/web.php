@@ -33,6 +33,8 @@ Route::get('/report','AdminController@getReport');
 Route::get('/category','AdminController@getCategory');
 Route::post('/add_category','AdminController@storeCategory');
 Route::post('/block_user/{id}','AdminController@block_user');
+Route::post('/unblock_user/{id}','AdminController@unblock_user');
+
 // Add Comment
 
 Route::post('/add_comment/{post_id}','CommentController@store');

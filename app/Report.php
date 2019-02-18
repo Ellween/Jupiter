@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Report extends Model
 {
     protected $fillable = [
-        'category', 
+        'categories_id', 'comments_id', 
     ];
 
 
