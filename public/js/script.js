@@ -157,29 +157,39 @@ $(document).ready(function(){
 
 // ADD Comment 
 
-// $(document).ready(function(){
-//     $('.add_comment').click(function(e){
-//         e.preventDefault();
+$(document).ready(function(){
+    $('.add_comment').click(function(e){
+        e.preventDefault();
 
-//         var data = $('.comment_form').serialize();
-//         var id = $(this).parent().parent().parent().attr('id');
+        var data = $('.comment_form').serialize();
+        var id = $(this).parent().parent().parent().attr('id');
 
-//         $.ajax({
-//             type:"POST",
-//             url:'/add_comment/' + id,
-//             data: data,
+      
+        $.ajax({
+            headers: {
+                     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                             },
+            type:"POST",
+            url:'/add_comment/' + id,
+            data: data,
 
-//             success: function(data){
+            success: function(data){
 
-//                 console.log(data)
+               
 
-//                 $('.all_comments').append(data);
-//             }
-//         });
+                $('.all_comments').append(data);
+            },
+
+            error: function(data)
+            {
+                console.log(data);
+            }
+
+        });
 
 
-//     });
-// });
+    });
+});
 
 
 // $(document).ready(function(){

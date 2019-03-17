@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Comment;
 use App\Post;
 use Auth;
-
+use App\Category;
 class CommentController extends Controller
 {
     public function store(Request $request , $post_id)
     {   
 
         $user = Auth::user();
+        $categories = Category::all();
 
 
         // $comment = Comment::create([
@@ -29,9 +30,9 @@ class CommentController extends Controller
         $comment->users()->associate($user->id);
         $comment->save();
 
-
         
-        return view('layout.comments',compact('comment'))->render();
+        return view('layout.comments',compact('comment','categories'))->render();
+
     }
 
     public function delete($com_id)

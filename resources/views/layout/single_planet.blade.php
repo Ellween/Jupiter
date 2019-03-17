@@ -5,9 +5,9 @@
 @section('content')
 
     <div class="container-fluid p-0 all_cont"  style="background-image: url('/images/nebula2.jpg'); background-attachment: fixed;"  >
-        <div class="row">
+        <div class="row w-100">
             <div class="container">
-                <div class="row">
+                <div class="row w-100">
                         <div class="single_planet w-100 d-flex justify-content-center pt-5" >
                 
                           <h1>{{$post->name}}</h1>
@@ -91,9 +91,32 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row">
+                <div class="row w-100">
 
-                    @if($user->blocked != 1 )
+                    @if (Auth::check())
+                        @if($user->blocked != 1 )
+                        <form class= 'w-100 comment_form'   action="/add_comment/{{$post->id}}" method="POST">
+                            @csrf
+                                <h1 class ='pt-5 mt-5 text-center w-100 text-light comment_header' >What Do You Think About This Planet</h1>
+                                <div id = {{$post->id}} class ='d-flex justify-content-center w-100 mt-3'>
+                                    <div class="comment_section w-50">
+                                        @if(Auth::check()) 
+                                        <input type="text" name ='comment_title'  class ='form-control'  value = {{$user->name}} >
+                                        <textarea name="comment_body" class ='form-control mt-4' cols="30" rows="10" placeholder="{{$user->name}}'s Opinnion"></textarea>
+                                        @else 
+                                        <input type="text"  name ='comment_title' class ='form-control' placeholder="Your Name">
+                                        <textarea name="comment_body"  class ='form-control mt-4' cols="30" rows="10" placeholder="Your Opinnion"></textarea>
+                                        @endif
+                                        <div class ='d-flex justify-content-center pt-4'><button type ='submit' class ='btn btn-primary add_comment'>Add Comment</button></div>
+
+                                    </div>
+                                </div>
+                        </form>
+                        @else 
+                            <h1>You Are Blocked</h1>
+                        @endif
+                    @else
+
                     <form class= 'w-100 comment_form'   action="/add_comment/{{$post->id}}" method="POST">
                         @csrf
                             <h1 class ='pt-5 mt-5 text-center w-100 text-light comment_header' >What Do You Think About This Planet</h1>
@@ -111,9 +134,8 @@
                                 </div>
                             </div>
                     </form>
-                     @else 
-                        <h1>You Are Blocked</h1>
-                     @endif
+
+                    @endif
 
                    
 
@@ -121,42 +143,7 @@
                    <div class ='d-flex justify-content-center w-100 pt-5 mt-5' >
                         <div class="all_comments w-50">
                                 @foreach ($post->comments as $comment)
-                                <div class="comment">
-                                        <h2>{{$comment->title}}</h2>
-                                        <hr style ='background: white; height: 1px; border-radius: 10px; margin-left: 0 ; width: 30%;'>
-                                        <div class ='align-items-center ' >
-                                            <div class ='d-flex align-items-center justify-content-between '>
-                                                    <p>{{$comment->body}}</p>
-                                                    <i style ='color: white; cursor: pointer;' class="show-report fas fa-exclamation-circle "></i>
-    
-                                            </div>
-                                             
-                                            <div class="report_form">
-                                                    <form action="/report_comment/{{ $comment->id }}" method="POST">
-                                                        @csrf
-                                                        @foreach ($categories as $category)
-                                                        <div>
-                                                                <input type="radio" name="report_category" value="{{$category->id}}"
-                                                                       >
-                                                                <label style ='color:white; font-family: "karla"'  class ='ml-3'  for="huey">{{$category->category}}</label>
-                                                              </div>
-                                                        @endforeach
-                                                        <textarea name="report_reason" class ='form-control report_text mt-4'   cols="30" rows="5"></textarea>
-    
-                                                        <div class ='d-flex justify-content-center pt-3' >
-                                                                <button class = 'btn btn-primary' type ='submit'>report</button>
-
-                                                        </div>
-                                
-                                                    </form>
-                                            </div>
-                             
-                                    
-                                        </div>
-                                       
-                                        <hr style ='background: white; height: 2px; border-radius: 10px;'>
-                                </div>
-                            
+                                    @include('layout.comments')
                                 @endforeach
                            
               
