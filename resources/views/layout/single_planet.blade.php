@@ -137,12 +137,15 @@
 
                     @endif
 
-                   
+
+                                 
 
 
                    <div class ='d-flex justify-content-center w-100 pt-5 mt-5' >
                         <div class="all_comments w-50">
                                 @foreach ($post->comments as $comment)
+
+
                                     @include('layout.comments')
                                 @endforeach
                            

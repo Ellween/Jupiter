@@ -7,6 +7,7 @@ use App\Comment;
 use App\Post;
 use Auth;
 use App\Category;
+use App\Replay;
 class CommentController extends Controller
 {
     public function store(Request $request , $post_id)
@@ -14,6 +15,7 @@ class CommentController extends Controller
 
         $user = Auth::user();
         $categories = Category::all();
+        $replays  = Replay::all();
 
 
         // $comment = Comment::create([
@@ -31,7 +33,7 @@ class CommentController extends Controller
         $comment->save();
 
         
-        return view('layout.comments',compact('comment','categories'))->render();
+        return view('layout.comments',compact('comment','categories','replays'))->render();
 
     }
 

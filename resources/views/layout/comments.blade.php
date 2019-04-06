@@ -1,4 +1,11 @@
 <div class="comment">
+
+        
+                @foreach ($comment->replays as $rep)
+                {{$rep}}
+        @endforeach    
+
+
     <h2>{{$comment->title}}</h2>
     <hr style ='background: white; height: 1px; border-radius: 10px; margin-left: 0 ; width: 30%;'>
     <div class ='align-items-center ' >
@@ -6,6 +13,7 @@
                 <p>{{$comment->body}}</p>
                 <i style ='color: white; cursor: pointer;' class="show-report fas fa-exclamation-circle "></i>
 
+                
         </div>
          
         <div class="report_form">
@@ -27,6 +35,17 @@
 
                 </form>
         </div>
+
+        <div class="replay_comment" com_id = {{$comment->id}}>
+                <form action="/comment_replay/{{$comment->id}}" method="POST">
+                        @csrf
+                        <input type="text" name ='name' class ='form-control'  >
+                        <textarea id="" name = 'replay_comment' class ='form-control' cols="30" rows="10"></textarea>
+                        <button type="submit">Add Replay</button>
+                </form>
+        </div>
+
+
 
 
     </div>

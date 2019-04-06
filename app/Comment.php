@@ -28,6 +28,11 @@ class Comment extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function replays()
+    {
+        return $this->hasMany('App\Replay');
+    }
     
 
 }

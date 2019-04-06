@@ -39,6 +39,11 @@ Route::post('/unblock_user/{id}','AdminController@unblock_user');
 
 Route::post('/add_comment/{post_id}','CommentController@store');
 Route::post('/delete_comment/{com_id}','CommentController@delete');
+
+// Comment Replay 
+
+Route::post('/comment_replay/{com_id}', 'ReplayController@replay');
+
 // Add Vote
 
 Route::post('/add_vote/{id}','PostController@storeVote');

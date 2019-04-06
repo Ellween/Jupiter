@@ -33,7 +33,7 @@ class PostController extends Controller
        
     }
 
-
+    for ($i = 0; $i < 10; $i++) {
         $post = Post::create([
             'name' => request('name'),
             'image' => $name[0],
@@ -48,11 +48,14 @@ class PostController extends Controller
             'alien_3_description' => request('alien_3_description'),
             'leader_alien_description' => request('leader_description'),
         ]);
-
-
-
         $post->authors()->associate($user);
         $post->save();
+
+      }
+       
+
+
+       
 
         
 

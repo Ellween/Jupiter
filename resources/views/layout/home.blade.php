@@ -61,7 +61,7 @@
                         @foreach ($post as $post)
 
                         @if($post->status != 1 )
-                        <div id = {{$post->id}} class="col-lg-6 col-md-6 col-sm-12">
+                        <div data-aos="fade-right" id = {{$post->id}} class="col-lg-6 col-md-6 col-sm-12 posts_list">
                                 <div class="other_planets d-flex flex-column pt-5">
                                 <div class="title_vote d-flex justify-content-center align-items-center">
                                         <a class ='flex-grow-1' style ='color: white; text-decoration: none;' href ="/post/{{$post->id}}"><h2 class ='text-center m-0'>{{$post->name}}</h2></a>

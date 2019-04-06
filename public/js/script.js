@@ -4,6 +4,9 @@ $(document).ready(function(){
         $('#search_id').focus();
     });
 
+    $('.posts_list:even').attr('data-aos' , 'fade-right');
+    $('.posts_list:odd').attr('data-aos' , 'fade-left');
+
     $('.signup').click(function(){
         $('.log-in').removeClass('active');
         $('.singup').toggleClass('active');

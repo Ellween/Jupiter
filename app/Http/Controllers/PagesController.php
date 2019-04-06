@@ -7,6 +7,7 @@ use App\Post;
 use App\Comment;
 use App\Report;
 use App\Category;
+use App\Replay;
 
 use Illuminate\Http\Request;
 
@@ -30,11 +31,12 @@ class PagesController extends Controller
     public function single($id)
     {
 
-
+        $replays = Replay::all();
         $post = Post::find($id);
         $user = Auth::user();
         $categories = Category::all();
         $reports = Report::all();
-        return view('layout.single_planet', compact('post','user','comments','reports','categories'));
+
+        return view('layout.single_planet', compact('post','user','comments','reports','categories' , 'replays'));
     }
 }
