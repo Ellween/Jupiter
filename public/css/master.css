@@ -25,6 +25,7 @@ padding: 0;
 }
 
 
+
 /* Header Css */
 
 .navbar {
@@ -722,4 +723,19 @@ opacity: 0.0
     background: transparent !important;
     outline: none !important;
     box-shadow: none !important;
+}
+
+
+
+/* Notification CSS */
+
+.notification-div {
+    display: none;
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:red;
+    z-index: 1;
 }

@@ -49,6 +49,7 @@ class PostController extends Controller
             'leader_alien_description' => request('leader_description'),
         ]);
         $post->authors()->associate($user);
+        $post->notification = 1;
         $post->save();
 
       }
@@ -69,6 +70,13 @@ class PostController extends Controller
 
     }
 
+
+    public function removeOne($id)
+    {   
+        $not_post = Post::find($id);
+        $not_post->notification = 0;
+        $not_post->save();
+    }
 
 
     public function storeVote($id)

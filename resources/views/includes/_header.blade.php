@@ -29,7 +29,19 @@
                         <li class ='bord-li login'>LogIn</li>
                         <li class ='bord-li signup'>Sign Up</li>
                     @endif
-
+                    <li style ='postion: relative;'><i class="fas fa-bell"></i>
+                        <div class ='notification-div'>
+                                 <form action="">
+                                @foreach ($not_posts as $post)
+                               
+                                        
+                                        <h1 class ='not-post' id ={{$post->id}} >{{$post->name}}</h1>
+                              
+                                
+                                @endforeach
+                        </form>
+                        </div>
+                    </li>
                     <li class ='bord-li'>Home</li>
                     <li class ='bord-li'>Planets</li>
                     <li class ='bord-li'>Contact Us</li>

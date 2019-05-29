@@ -1,4 +1,11 @@
 $(document).ready(function(){
+
+   
+
+    $('.fa-bell').click(function(){
+        $('.notification-div').slideToggle();
+    });
+
     $('.fa-search').click(function(){
         $('.search').toggleClass("active");
         $('#search_id').focus();
@@ -311,5 +318,32 @@ $(document).ready(function(){
                 
             }
         });
+    });
+});
+
+// Notification
+
+$('.not-post').click(function(){
+    
+   
+
+    var id = $(this).attr('id')
+    $.ajax({
+        headers: {
+             'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+
+        type:"POST",
+        url:'/remove_one/' + id,
+        
+
+        success: function(){
+
+            
+         console.log('yes');
+
+            
+            
+        }
     });
 });

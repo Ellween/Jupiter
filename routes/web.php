@@ -62,3 +62,7 @@ Route::get('/favorite','UsersController@favorite');
 // Search SyStem
 
 Route::post('/search','PostController@search');
+
+// Notification
+
+Route::post('/remove_one/{id}','PostController@removeOne');

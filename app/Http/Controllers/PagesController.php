@@ -16,16 +16,18 @@ class PagesController extends Controller
     public function home()
     {    
         
-
+        $not_posts = Post::where('notification' ,1)->get();
+        
         $user = Auth::user();
         
         // $post = Post::orderBy('vote','desc')->get();
         $post= Post::with('users')->orderBy('vote','desc')->get();
+       
         if(Auth::check()){
             $posts_array = $user->posts->pluck('id');
 
         }
-        return view('layout.home', compact('user','post','posts_array'));
+        return view('layout.home', compact('user','post','posts_array','not_posts'));
     }
 
     public function single($id)

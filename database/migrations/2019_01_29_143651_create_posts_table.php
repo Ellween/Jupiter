@@ -16,6 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('status')->default(1);
+            $table->integer('notification')->default(0);
             $table->integer('vote')->default(0);
             $table->integer('authors_id')->nullable();
             $table->string('name');
