@@ -16,10 +16,9 @@ class PagesController extends Controller
     public function home()
     {    
         
-        $not_posts = Post::where('notification' ,1)->get();
         
         $user = Auth::user();
-        
+        $not_posts = Post::where('notification' ,1)->get();
         // $post = Post::orderBy('vote','desc')->get();
         $post= Post::with('users')->orderBy('vote','desc')->get();
        
@@ -28,6 +27,14 @@ class PagesController extends Controller
 
         }
         return view('layout.home', compact('user','post','posts_array','not_posts'));
+    }
+
+    public function noti()
+    {
+        $not_posts = Post::where('notification' ,1)->get();
+
+        return response()->json(['response' => 'success', 'post' => $not_posts ]);
+
     }
 
     public function single($id)

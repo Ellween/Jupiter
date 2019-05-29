@@ -325,7 +325,9 @@ $(document).ready(function(){
 
 $('.not-post').click(function(){
     
-   
+    var es = $(this);
+    var numb = $('.not-dot').text();
+    console.log(numb);
 
     var id = $(this).attr('id')
     $.ajax({
@@ -340,10 +342,45 @@ $('.not-post').click(function(){
         success: function(){
 
             
-         console.log('yes');
+        es.attr('style','font-weight: 300;color :#00000078;');
 
+        $('.not-dot').text(parseInt($('.not-dot').text()) - 1) ;
+
+           
             
             
         }
     });
 });
+
+
+
+// setInterval(function(){ 
+    $.ajax({
+        headers: {
+             'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+
+        type:"GET",
+        url:'/noti',
+        
+
+        success: function(data){
+
+            console.log(data);
+        
+            var length = Object.keys(data.post).length;
+            console.log(length);
+            
+            $('.not-dot').html(length);
+
+            // console.log(data.post[0].id)
+
+            
+            
+        }
+    });
+
+// }, 30000);
+
+

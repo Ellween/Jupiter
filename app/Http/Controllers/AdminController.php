@@ -19,8 +19,10 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         $users = User::all();
-        
-        return view('admin.index', compact('user' , 'users'));
+        $not_posts = Post::where('notification' ,1)->get();
+
+
+        return view('admin.index', compact('user' , 'users','not_posts'));
     }
 
     public function delete($id)

@@ -732,10 +732,45 @@ opacity: 0.0
 .notification-div {
     display: none;
     position: absolute;
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 300px;
+    overflow: auto;
     left: 50%;
     transform: translateX(-50%);
-    background:red;
+    background:white;
     z-index: 1;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.57);
+box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.57);
+padding: 10px 20px;
+}
+
+.notification-div::-webkit-scrollbar { 
+    display: none; 
+}
+
+.not-post {
+    font-weight: bold;
+    color: black ;
+}
+
+.fa-bell {
+    font-size: 25px;
+}
+
+.not-dot {
+    width: 15px;
+    height: 5ox;
+    height: 15px;
+    border-radius: 50%;
+    background: red;
+    font-size: 9px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 80%;
 }

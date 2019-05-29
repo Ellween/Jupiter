@@ -29,19 +29,22 @@
                         <li class ='bord-li login'>LogIn</li>
                         <li class ='bord-li signup'>Sign Up</li>
                     @endif
+                    @if(Auth::check())
                     <li style ='postion: relative;'><i class="fas fa-bell"></i>
+                        <div class= 'not-dot'></div>
                         <div class ='notification-div'>
                                  <form action="">
                                 @foreach ($not_posts as $post)
                                
                                         
-                                        <h1 class ='not-post' id ={{$post->id}} >{{$post->name}}</h1>
+                                        <p class ='not-post' id ={{$post->id}} >{{$post->name}}</p>
                               
                                 
                                 @endforeach
                         </form>
                         </div>
                     </li>
+                    @endif
                     <li class ='bord-li'>Home</li>
                     <li class ='bord-li'>Planets</li>
                     <li class ='bord-li'>Contact Us</li>
