@@ -67,3 +67,5 @@ Route::post('/search','PostController@search');
 
 Route::post('/remove_one/{id}','PostController@removeOne');
 Route::get('/noti', 'PagesController@noti');
+Route::get('/user_noti','PagesController@user_not');
+Route::post('/remove_two/{id}','PostController@removeTwo');

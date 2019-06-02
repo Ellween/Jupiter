@@ -323,38 +323,46 @@ $(document).ready(function(){
 
 // Notification
 
-$('.not-post').click(function(){
+
+
+
+var user_type = $('.login_a').attr('id');
+
+if(user_type == 2)
+{
+
+    $('.not-post').click(function(){
     
-    var es = $(this);
-    var numb = $('.not-dot').text();
-    console.log(numb);
-
-    var id = $(this).attr('id')
-    $.ajax({
-        headers: {
-             'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-        },
-
-        type:"POST",
-        url:'/remove_one/' + id,
-        
-
-        success: function(){
-
+        var es = $(this);
+        var numb = $('.not-dot').text();
+        console.log(numb);
+    
+        var id = $(this).attr('id')
+        $.ajax({
+            headers: {
+                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            },
+    
+            type:"POST",
+            url:'/remove_one/' + id,
             
-        es.attr('style','font-weight: 300;color :#00000078;');
-
-        $('.not-dot').text(parseInt($('.not-dot').text()) - 1) ;
-
-           
-            
-            
-        }
+    
+            success: function(){
+    
+                
+            es.attr('style','font-weight: 300;color :#00000078;');
+    
+            $('.not-dot').text(parseInt($('.not-dot').text()) - 1) ;
+    
+               
+                
+                
+            }
+        });
     });
-});
+    
 
-
-
+    console.log("User", user_type)
 // setInterval(function(){ 
     $.ajax({
         headers: {
@@ -382,5 +390,66 @@ $('.not-post').click(function(){
     });
 
 // }, 30000);
+}else {
+
+    console.log("User", user_type)
+
+    $.ajax({
+        headers: {
+             'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+    
+        type:"GET",
+        url:'/user_noti',
+        
+    
+        success: function(data){
+    
+            console.log(data);
+        
+            var length = Object.keys(data.posts).length;
+            console.log(length);
+            
+            $('.not-dot-2').html(length);
+    
+            // console.log(data.post[0].id)
+    
+            
+            
+        }
+    });
+
+    
+    $('.not-post').click(function(){
+    
+        var es = $(this);
+        var numb = $('.not-dot-2').text();
+        console.log(numb);
+    
+        var id = $(this).attr('id')
+        $.ajax({
+            headers: {
+                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            },
+    
+            type:"POST",
+            url:'/remove_two/' + id,
+            
+    
+            success: function(){
+    
+                
+            es.attr('style','font-weight: 300;color :#00000078;');
+    
+            $('.not-dot-2').text(parseInt($('.not-dot-2').text()) - 1) ;
+    
+               
+                
+                
+            }
+        });
+    });
+    
+}
 
 

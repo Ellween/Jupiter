@@ -732,10 +732,11 @@ opacity: 0.0
 .notification-div {
     display: none;
     position: absolute;
-    width: 200px;
-    height: 300px;
+    width: 180px;
+    max-height: 300px;
     overflow: auto;
     left: 50%;
+    top: 140%;
     transform: translateX(-50%);
     background:white;
     z-index: 1;
@@ -744,6 +745,10 @@ opacity: 0.0
 -moz-box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.57);
 box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.57);
 padding: 10px 20px;
+}
+
+.notification-div p:last-child {
+    margin: 0px !important;
 }
 
 .notification-div::-webkit-scrollbar { 
@@ -759,7 +764,7 @@ padding: 10px 20px;
     font-size: 25px;
 }
 
-.not-dot {
+.not-dot,.not-dot-2 {
     width: 15px;
     height: 5ox;
     height: 15px;

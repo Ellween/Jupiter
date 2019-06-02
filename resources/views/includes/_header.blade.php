@@ -21,29 +21,54 @@
 
 
 
-                <ul class ='d-flex align-items-center justify-content-center m-0 p-0 bord' >
+                <ul class ='d-flex align-items-center justify-content-center m-0 p-0 bord'  >
                     @if(Auth::check())
-                        <a href ='/user_profile'><li class =''><img src="{{asset('images/' . $user->avatar)}}" alt="" style='width: 23px;'></li></a>
+                        <a class ='login_a' id ={{ $user->type }} href ='/user_profile'><li class =''><img src="{{asset('images/' . $user->avatar)}}" alt="" style='width: 23px;'></li></a>
                         <a style ='text-decoration: none; color: white; font-family: Roboto;' href ='/logout'><li class ='' >Logout</li></a>
                     @else
                         <li class ='bord-li login'>LogIn</li>
                         <li class ='bord-li signup'>Sign Up</li>
                     @endif
                     @if(Auth::check())
+                    @if($user->type == 2)
                     <li style ='postion: relative;'><i class="fas fa-bell"></i>
                         <div class= 'not-dot'></div>
+                       
                         <div class ='notification-div'>
                                  <form action="">
-                                @foreach ($not_posts as $post)
-                               
+                                      
+                                                @foreach ($not_posts as $post)
                                         
-                                        <p class ='not-post' id ={{$post->id}} >{{$post->name}}</p>
-                              
-                                
-                                @endforeach
+                                                        
+                                                        <p class ='not-post' id ={{$post->id}} >{{$post->name}}</p>
+                                        
+                                                
+                                                @endforeach
+                                       
                         </form>
                         </div>
                     </li>
+
+                    @else 
+                    <li style ='postion: relative;'><i class="fas fa-bell"></i>
+                        <div class= 'not-dot-2'></div>
+                       
+                        <div class ='notification-div'>
+                                 <form action="">
+                                      
+                                                @foreach ($real_posts as $post)
+                                        
+                                                        
+                                                        <p class ='not-post' id ={{$post->id}} >{{$post->name}}</p>
+                                        
+                                                
+                                                @endforeach
+                                       
+                        </form>
+                        </div>
+                    </li>
+                    @endif
+                    
                     @endif
                     <li class ='bord-li'>Home</li>
                     <li class ='bord-li'>Planets</li>

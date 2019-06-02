@@ -33,6 +33,8 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
+    
+
     public function planets()
     {
         $user = Auth::user();
@@ -54,6 +56,8 @@ class AdminController extends Controller
 
     public function edit_post(Request $request , $post_id)
     {
+
+        $not_posts = Post::where('notification' ,1)->get();
 
         $post = Post::find($post_id);
 
@@ -196,7 +200,7 @@ class AdminController extends Controller
         $user = Auth::user();
         $post = Post::find($post_id);
 
-        return view('admin.edit_post', compact('user','post'));
+        return view('admin.edit_post', compact('user','post','not_posts'));
 
 
     }
@@ -204,12 +208,28 @@ class AdminController extends Controller
 
     public function draft()
     {
+      $not_posts = Post::where('notification' ,1)->get();
       $user = Auth::user();
       $post = Post::all();
-      return view('admin.draft', compact('user','post'));
+      return view('admin.draft', compact('user','post','not_posts'));
     }
 
   
+    public function noti()
+    {
+        $real_user = Auth::user()->type;
+        if($real_user == 2)
+        {
+            $not_posts = Post::where('notification' ,1)->get();
+        }else
+        {
+            $not_posts = "";
+        }
+        
+
+        return response()->json(['response' => 'success', 'post' => $not_posts ]);
+
+    }
 
     public function report(Request $request , $com_id)
     {

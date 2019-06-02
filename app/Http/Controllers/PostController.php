@@ -78,6 +78,13 @@ class PostController extends Controller
         $not_post->save();
     }
 
+    public function removeTwo($id)
+    {   
+        $not_post = Post::find($id);
+        $not_post->user_notification = 0;
+        $not_post->save();
+    }
+
 
     public function storeVote($id)
     {
