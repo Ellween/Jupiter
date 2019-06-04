@@ -40,7 +40,7 @@
                                                 @foreach ($not_posts as $post)
                                         
                                                         
-                                                        <p class ='not-post' id ={{$post->id}} >{{$post->name}}</p>
+                                                        <a href ='http://localhost:8000/draft_posts'><p class ='not-post' id ={{$post->id}} >{{$post->name}}</p></a>
                                         
                                                 
                                                 @endforeach

@@ -18,7 +18,6 @@ class PagesController extends Controller
         
     
         $user = Auth::user();
-        $not_posts = Post::where('notification' ,1)->get();
         // $post = Post::orderBy('vote','desc')->get();
         $post= Post::with('users')->orderBy('vote','desc')->get();
       
@@ -32,7 +31,7 @@ class PagesController extends Controller
         }
 
        
-        return view('layout.home', compact('user','post','posts_array','not_posts','real_posts'));
+        return view('layout.home', compact('user','post','posts_array','real_posts'));
     }
 
     public function noti()

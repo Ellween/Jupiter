@@ -19,10 +19,9 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         $users = User::all();
-        $not_posts = Post::where('notification' ,1)->get();
 
 
-        return view('admin.index', compact('user' , 'users','not_posts'));
+        return view('admin.index', compact('user' , 'users'));
     }
 
     public function delete($id)
@@ -57,7 +56,6 @@ class AdminController extends Controller
     public function edit_post(Request $request , $post_id)
     {
 
-        $not_posts = Post::where('notification' ,1)->get();
 
         $post = Post::find($post_id);
 
@@ -170,6 +168,7 @@ class AdminController extends Controller
 
         if (isset($input)){
             $post->status = 2;
+            $post->user_notification = 1;
           }
           else {
        
@@ -200,7 +199,7 @@ class AdminController extends Controller
         $user = Auth::user();
         $post = Post::find($post_id);
 
-        return view('admin.edit_post', compact('user','post','not_posts'));
+        return view('admin.edit_post', compact('user','post'));
 
 
     }
@@ -317,6 +316,45 @@ class AdminController extends Controller
       $user->save();
       return redirect()->back();
 
+    }
+
+
+    // TESTs
+
+    public function getTest()
+    {
+      $users = User::all();
+
+      return view('test.index',compact('users'));
+    }
+
+    public function getPost()
+    {
+      $post = Post::all();
+      $post_count = Post::all()->count();
+      return view('test.posts',compact('post','post_count'));
+    }
+
+    public function getDraft()
+    {
+      $post_count = Post::where('status',1)->count();
+      $post = Post::where('status',1)->get();
+      return view('test.draft',compact('post','post_count'));
+    }
+
+    public function getPublished()
+    {
+      $post_count = Post::where('status',2)->count();
+      $post = Post::where('status',2)->get();
+      return view('test.pub',compact('post','post_count'));
+    }
+
+    public function test_search(Request $request)
+    {
+      $item = $request->search;
+      $post_count = Post::where('name', 'LIKE', '%'.$item.'%')->count();
+      $post = Post::where('name', 'LIKE', '%'.$item.'%')->get();
+      return view('test.search',compact('post','post_count'));
     }
 
 }

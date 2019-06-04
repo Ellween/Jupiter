@@ -69,3 +69,13 @@ Route::post('/remove_one/{id}','PostController@removeOne');
 Route::get('/noti', 'PagesController@noti');
 Route::get('/user_noti','PagesController@user_not');
 Route::post('/remove_two/{id}','PostController@removeTwo');
+
+
+
+// Test Adminn
+
+Route::get('/admin_test','AdminController@getTest')->name('home');
+Route::get('/admin_post','AdminController@getPost')->name('posts');
+Route::get('/admin_drafts','AdminController@getDraft');
+Route::get('/published','AdminController@getPublished');
+Route::post('/admin_search','AdminController@test_search');

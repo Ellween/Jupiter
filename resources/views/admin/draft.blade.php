@@ -18,11 +18,11 @@
             <div class ='container' style ='max-width: 1100px'>
                 <div class= 'row d-flex posts'>
                     @foreach ($post as $post)
-                    <form action="/post_edit/{{$post->id}}" method='POST' enctype="multipart/form-data">
+                    <form data-aos="fade-right" class ='col-lg-6 col-md-6 col-sm-12 ' action="/post_edit/{{$post->id}}" method='POST' enctype="multipart/form-data">
                         @csrf
                   
-                    <div id = {{$post->id}} class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="other_planets d-flex flex-column pt-5">
+                    <div id = {{$post->id}} class="">
+                            <div  class="other_planets d-flex flex-column pt-5">
                             <div class="title_vote d-flex justify-content-center align-items-center">
                                     <a class ='flex-grow-1' style ='color: white; text-decoration: none;' href ="/post/{{$post->id}}"><h2 class ='text-center m-0'>{{$post->name}}</h2></a>
                                     @if($post->status == 2)   
