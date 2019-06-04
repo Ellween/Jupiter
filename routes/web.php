@@ -76,6 +76,6 @@ Route::post('/remove_two/{id}','PostController@removeTwo');
 
 Route::get('/admin_test','AdminController@getTest')->name('home');
 Route::get('/admin_post','AdminController@getPost')->name('posts');
-Route::get('/admin_drafts','AdminController@getDraft');
-Route::get('/published','AdminController@getPublished');
-Route::post('/admin_search','AdminController@test_search');
+Route::get('/admin_drafts','AdminController@getDraft')->name('drafts');
+Route::get('/published','AdminController@getPublished')->name('published');
+Route::post('/admin_search','AdminController@test_search')->name('Searched');

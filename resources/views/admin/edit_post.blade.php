@@ -39,7 +39,7 @@
                                                             </div>
                                                             <div class="other_planets_disc" style ='margin: 0 20px;'>
                                                                 <label for="description">Planet Full Description</label>
-                                                               <textarea name="full_description" class ='form-control' value ="" id="" cols="70" rows="10">{{$post->full_description}}</textarea>
+                                                               <textarea name="full_description" class ='form-control ckeditor' value ="" id="" cols="70" rows="10">{{$post->full_description}}</textarea>
                                                             </div>
                                                             <div class="other_planets_big_text">
                                                                 <label for="planet_full">Planet Mini Description</label>
@@ -105,7 +105,7 @@
                                                             <input type="file" name ='image-4' >
                                                     </div>
                                                   
-                                                        <textarea class ='form-control mt-3'name="leader_description" id="" cols="70" rows="10">{{$post->leader_alien_description}}</textarea>
+                                                        <textarea  class ='form-control mt-3 ckeditor' name="leader_description" id="" cols="70" rows="10">{{$post->leader_alien_description}}</textarea>
                                                 </div>
                                                
                                                
@@ -171,4 +171,7 @@
             </div>
         </div>
     </div>
+
+
+
 @endsection

@@ -64,7 +64,17 @@
                                                          <p class="card-text comment more">
                                                              {{$post->description}}
                                                          </p>
-                                                         <a href="/post/{{$post->id}}" class="btn btn-primary">Read More...</a>
+                                                         <div class ='d-flex justify-content-between'>
+                                                            <a href="/post/{{$post->id}}" class="btn btn-primary d-flex align-items-center">More...</a>
+                                                            <a href="/post_edit/{{$post->id}}" class="btn btn-success"><i class="fas fa-pen"></i></a>
+                                                            <form action="/post_delete/{{ $post->id }}" method="POST">
+                                                                @csrf
+                                                                <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                            </form>
+                                                           
+                                                         </div>
+                                                        
+                                                        
                                                      </div>
                                                  </div>
                                             </div>

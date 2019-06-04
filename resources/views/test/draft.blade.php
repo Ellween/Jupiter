@@ -27,7 +27,7 @@
                                 <p>All articles in the Database</p>
                              </div>
                             <div class ='d-flex' >
-                                <span>Admin</span><span>Articles</span><span>List</span>
+                                {{ Breadcrumbs::render('drafts') }}     
                             </div>
                          </div>
                          <div class="main-body">
@@ -60,7 +60,15 @@
                                                          <p class="card-text comment more">
                                                              {{$post->description}}
                                                          </p>
-                                                         <a href="/post/{{$post->id}}" class="btn btn-primary">Read More...</a>
+                                                         <div class ='d-flex justify-content-between'>
+                                                            <a href="/post/{{$post->id}}" class="btn btn-primary d-flex align-items-center">More...</a>
+                                                            <a href="/post_edit/{{$post->id}}" class="btn btn-success"><i class="fas fa-pen"></i></a>
+                                                            <form action="/post_delete/{{ $post->id }}" method="POST">
+                                                                @csrf
+                                                                <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                            </form>
+                                                           
+                                                         </div>
                                                      </div>
                                                  </div>
                                             </div>

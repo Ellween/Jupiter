@@ -62,6 +62,14 @@
                                                     @endif
                                                 </td>
                                                 <td>{{$users->email}}</td>
+                                                @if($users->type != 2)
+                                                    <form   action="/user_delete/{{$users->id}}" method= "POST">
+                                                        @csrf
+                                                            <td style ='border:none !important; width: 1% !important;' id = {{$users->id}}><button class ='btn btn-danger delete_user'>Delete</button></td>
+                                                    </form>
+                                                @else 
+
+                                                @endif
                                             </tr>
                                             @endforeach
                                         </table>
