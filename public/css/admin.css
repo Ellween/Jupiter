@@ -267,3 +267,27 @@ th, td {
     padding: 0 !important;
     background: none !important;
 }
+
+.navigation-list a {
+    color: #858F95;
+    text-decoration: none;
+}
+
+.navigation-list a:focus {
+    text-decoration: none !important;
+    border: none;   
+}
+
+.navigation-list a:hover {
+    text-decoration: none;
+}
+
+#search_id {
+    border: 1px solid #ccc !important;
+    border-radius: 3px !important;
+    padding: 3px !important;
+}
+
+#search_id:focus {
+    outline: none;
+}

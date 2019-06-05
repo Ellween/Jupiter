@@ -63,11 +63,14 @@ class PagesController extends Controller
     }
 
 
-    public function single($id)
+    public function single($slug)
     {
 
+       
+
         $replays = Replay::all();
-        $post = Post::find($id);
+        $post = Post::find(1);
+        dd($post);
         $user = Auth::user();
         $categories = Category::all();
         $reports = Report::all();

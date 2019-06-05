@@ -13,7 +13,7 @@
 
 Route::get('/','PagesController@home');
 Route::get('/logout','Auth\LoginController@logout');
-Route::get('/post/{id}','PagesController@single');
+Route::get('/post/{slug}','PagesController@single');
 // Add post
 
 Route::post('/add_post','PostController@store');
@@ -79,3 +79,4 @@ Route::get('/admin_post','AdminController@getPost')->name('posts');
 Route::get('/admin_drafts','AdminController@getDraft')->name('drafts');
 Route::get('/published','AdminController@getPublished')->name('published');
 Route::post('/admin_search','AdminController@test_search')->name('Searched');
+Route::get('/add_post_test','AdminController@adding_post')->name('add_post');

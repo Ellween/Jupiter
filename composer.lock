@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "30483a765e03d51a3948d89fd24680aa",
+    "content-hash": "307ce109bb8910c3a20989db20cec1ad",
     "packages": [
         {
             "name": "davejamesmiller/laravel-breadcrumbs",

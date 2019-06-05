@@ -357,4 +357,11 @@ class AdminController extends Controller
       return view('test.search',compact('post','post_count'));
     }
 
+    public function adding_post(Request $request){
+
+
+      return view('test.add_post');
+
+    }
+
 }
